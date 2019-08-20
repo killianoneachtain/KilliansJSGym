@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "gender": "male",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "address": "1492 Evergreen Terrace, Springfield, USA",
+      "height": 174,
+      "startingweight": 114.25,
+      "id": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "numberOfAssessments": 4,
+      "BMI": "28.08",
+      "date": 1566091786122
+    }
+  ]
+}

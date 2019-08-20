@@ -1,0 +1,56 @@
+{
+  "assessmentCollection": [
+    {
+      "id": "8c931898-1d60-486a-9ce5-6610f6af401c",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "weight": 85.22,
+      "chest": 65,
+      "thigh": 56,
+      "upperArm": 56,
+      "waist": 56,
+      "hips": 56,
+      "comment": "",
+      "date": "18-Aug-2019 03:33:40",
+      "trend": "olive"
+    },
+    {
+      "id": "702c7168-1ffd-433a-9105-783ff64ecdc2",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "weight": 94,
+      "chest": 56,
+      "thigh": 56,
+      "upperArm": 56,
+      "waist": 56,
+      "hips": 56,
+      "comment": "",
+      "date": "18-Aug-2019 14:15:30",
+      "trend": "red"
+    },
+    {
+      "id": "3edf331f-89b1-4a68-bfd4-6fce24a6dc87",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "weight": 45,
+      "chest": 56,
+      "thigh": 56,
+      "upperArm": 56,
+      "waist": 56,
+      "hips": 56,
+      "comment": "",
+      "date": "20-Aug-2019 15:20:47",
+      "trend": "olive"
+    },
+    {
+      "id": "3b3daf1f-5ebd-4162-ac7d-cd53fe7f9f29",
+      "userId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "weight": 85,
+      "chest": 85,
+      "thigh": 85,
+      "upperArm": 56,
+      "waist": 56,
+      "hips": 56,
+      "comment": "Wooo",
+      "date": "20-Aug-2019 15:28:45",
+      "trend": "blue"
+    }
+  ]
+}

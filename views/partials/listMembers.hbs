@@ -1,0 +1,37 @@
+<section class="ui raised segment">
+    <header class="ui header">
+    </header>
+    <table class="ui very basic striped table">
+        <thead>
+        <tr>
+            <th class="two wide center aligned"><i class="blue folder icon"></i><i class="large male icon"></i>
+                <i class="pink folder icon"></i><i class="large female icon"></i></th>
+            <th class="thirteen wide" style="font-size: 130%">MEMBER</th>
+            <th class="one wide"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each members}}
+        <tr>
+            <td class="center aligned">
+                <script src="/controllers/analytics.js"></script>
+                <script>analytics.folderColour({{gender}})</script>
+                <i class="big red folder icon"></i>
+                {{folderColour}}
+
+            </td>
+
+            <td style="font-size: 120%"><a href="/memberAssessments/{{id}}" style="font-weight: bold">
+                {{firstName}} {{lastName}} {{gender}}</a>
+                <p>{{numberOfAssessments}} Assessments</p></td>
+
+            <td class="center aligned" data-tooltip="Delete {{firstName}}"><a href="/trainer/{{id}}/deletemember">
+                <i class="large red trash alternate icon"></i></a></td>
+            <p>{{folderColour}}</p>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</section>
+
+<p>{{folderColour}}</p>
