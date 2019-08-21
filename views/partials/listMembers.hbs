@@ -18,8 +18,11 @@
             </td>
 
             <td style="font-size: 120%"><a href="/memberAssessments/{{id}}" style="font-weight: bold">
-                {{firstName}} {{lastName}}</a>
-                <p>{{numberOfAssessments}} Assessments</p>
+                <h2>{{firstName}} {{lastName}}</h2></a><p>
+                <div class="ui large label">
+                    Assessments
+                    <div class="detail">{{numberOfAssessments}}</div>
+                </div>
             </td>
 
             <td class="center aligned" data-tooltip="Delete {{firstName}}"><a href="/trainer/{{id}}/deletemember">

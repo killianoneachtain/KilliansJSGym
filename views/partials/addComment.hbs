@@ -12,7 +12,6 @@
                 <th>Upper Arm (cm)</th>
                 <th>Waist (cm)</th>
                 <th>Hips (cm)</th>
-                <th>Comment</th>
             </tr>
             </thead>
             <tbody>
@@ -24,13 +23,24 @@
                 <td data-label="Upper Arm">{{upperArm}}</td>
                 <td data-label="Waist">{{waist}}</td>
                 <td data-label="Hips">{{hips}}</td>
-                <td data-label="Comment">{{comment}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="ui celled padded table">
+            <thead>
+            <tr>
+                <th><h4 data-tooltip="Existing Comment"><i class="red comment alternate icon"></i></h4></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{comment}}</td>
             </tr>
             </tbody>
         </table>
         <form class="ui form" action="/trainer/{{id}}/addcomment" method="POST">
             <div class="field">
-                <label><i class="comment alternate icon"></i>Comment</label>
+                <label><h2><i class="green comment alternate icon"></i></h2></label>
                 <div class="ui input focus">
                     <textarea rows="4" type="text" placeholder="Add comments..." maxlength="400" name="comment"></textarea>
                 </div>

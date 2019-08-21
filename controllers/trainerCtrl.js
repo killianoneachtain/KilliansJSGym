@@ -15,14 +15,32 @@ const trainerDashboard = {
         logger.info("trainerCtrl rendering");
         const trainer = accounts.getCurrentTrainer(request);
 
+         const allusers = userStore.getAllUsers();
+         const colour = "olive";
+
+
         const viewData = {
             title: "Trainer Dashboard",
             members: userStore.getAllUsers(),
             trainer: trainerStore.getTrainerByEmail(trainer.email)
-            //colour: allMembers.forEach((e)=>{analytics.folderColour(allMembers.gender)})
+            //colour: trainerDashboard.pinkOrBlue()
         };
 
         response.render("trainer", viewData);
+    },
+
+    pinkOrBlue()
+    {
+        let users = trainerDashboard.index.members;
+        let i = 0;
+        for(i=0; i < users.length;i++)
+        {
+            if (users.gender === "male") {
+                return "blue";
+            } else if (users.gender === "female") {
+                return "pink";
+            } else return "olive";
+        }
     },
 
     viewAssessments(request, response)
