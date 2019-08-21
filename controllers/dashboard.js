@@ -11,16 +11,25 @@ const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     const currentUser = accounts.getCurrentUser(request);
-    logger.info("dashboard current user is " , currentUser);
+    logger.info("dashboard current user is ");
+    logger.info(currentUser);
 
-    //const assessments = assessmentStore.getUserAssessments(currentUser.id);
+    const assessments = assessmentStore.getUserAssessments(currentUser.id);
+    const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
+    const currentBMI = analytics.calculateBMI(sortedAssessments[0],currentUser.id);
+    const currentWeight = sortedAssessments[0].weight;
 
     const viewData = {
       title: "Member Dashboard",
-      assessments: assessmentStore.getUserAssessments(currentUser.id),
+      assessments: sortedAssessments,
       user: userStore.getUserById(currentUser.id),
-      BMI: analytics.determineBMICategory(currentUser.BMI),
-      trend: analytics.userTrend(currentUser)
+      currentBMI: currentBMI,
+      BMICategory: analytics.determineBMICategory(currentBMI),
+      heartColour: analytics.heartColour(currentBMI),
+      idealWeight: analytics.idealBodyWeight(sortedAssessments[0]),
+      tachometerColour: analytics.isIdealWeight(sortedAssessments[0]),
+      currentWeight: currentWeight,
+      weightDifferential: analytics.idealWeightDifferential(sortedAssessments[0])
     };
     logger.info("about to render");
     response.render("dashboard", viewData);
@@ -48,44 +57,10 @@ const dashboard = {
       date: "",
       trend: ""
     };
-    logger.debug("Creating a new Assessment", newAssessment);
+    logger.info("Creating a new Assessment", newAssessment);
     assessmentStore.addAssessment(newAssessment);
 
     response.redirect("/dashboard");
-  },
-
-  sortAssessmentsByDate(userId)
-  {
-    const assessments = assessmentStore.getUserAssessments(userId);
-    logger.info("sorting dates here");
-    return assessments.sort(dashboard.compareValues('date','desc'));
-  },
-
-  compareValues(key,order='asc')
-      //https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
-  {
-    return function (a, b) {
-      if (!a.hasOwnProperty(key) ||
-          !b.hasOwnProperty(key)) {
-        return 0;
-      }
-
-      const varA = (typeof a[key] === 'string') ?
-          a[key].toUpperCase() : a[key];
-      const varB = (typeof b[key] === 'string') ?
-          b[key].toUpperCase() : b[key];
-
-      let comparison = 0;
-      if (varA > varB) {
-        comparison = 1;
-      } else if (varA < varB) {
-        comparison = -1;
-      }
-      return (
-          (order === 'desc') ?
-              (comparison * -1) : comparison
-      );
-    };
   }
 
 };

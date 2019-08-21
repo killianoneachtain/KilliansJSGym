@@ -4,14 +4,14 @@
             text-transform: uppercase; font-weight: bold">
         <div class="six column row" style="padding-bottom: 0%">
             <div class="four wide column"><i class="big  user icon"></i></div>
-            <div class="four wide column"  data-tooltip="Your Ideal Weight is: Kg">
-                <i class="bigctachometer alternate icon"></i></div>
+            <div class="four wide column"  data-tooltip="Your Ideal Weight is: {{idealWeight}} Kg">
+                <i class="big {{tachometerColour}} tachometer alternate icon"></i></div>
             <div class="two wide column" style="text-align: right; padding: 0px; ">
-                <i class="big heartbeat icon"></i></div>
+                <i class="big {{heartColour}} heartbeat icon"></i></div>
             <div class="two wide column" style="padding-top: 8px; padding-left: 0px; font-size: 200%;
                     text-align: left; font-family: 'Avenir','Avenir Next', 'Avenir Next Condensed', sans-serif;
                     font-weight: normal">
-                {{user.BMI}}
+                {{currentBMI}}
             </div>
             <div class="three wide column">
                 <i class="big user md icon"></i></div>
@@ -25,7 +25,7 @@
                 Ideal Weight Indicator</div>
             <div class="two wide column"></div>
             <div class="two wide column" style="padding-left: 0px; text-align: left">BMI</div>
-            <div class="three wide column">{{BMI}}</div>
+            <div class="three wide column">{{BMICategory}}</div>
             <div class="one wide column"></div>
         </div>
     </div>
@@ -33,4 +33,5 @@
 
 <section>
     <div>Number of Assessments : {{user.numberOfAssessments}}</div>
+    <div>tachometer colour : {{tachometerColour}}</div>
 </section>

@@ -7,6 +7,7 @@ const userStore = require("../models/user-store");
 const trainerCtrl = require("../models/trainer-store");
 const analytics = require("../controllers/analytics");
 const dashboard = require("../controllers/dashboard");
+
 const uuid = require("uuid");
 
 const trainerDashboard = {
@@ -17,7 +18,7 @@ const trainerDashboard = {
         const viewData = {
             title: "Trainer Dashboard",
             members: userStore.getAllUsers(),
-            folderColour: analytics.folderColour(allMembers.gender)
+            //colour: allMembers.forEach((e)=>{analytics.folderColour(allMembers.gender)})
         };
 
         response.render("trainer", viewData);
@@ -26,15 +27,23 @@ const trainerDashboard = {
     viewAssessments(request, response)
     {
         logger.info("trainer/member rendering");
-
         const memberID = request.params.id;
+
+        const member = userStore.getUserById(memberID);
+
         const assessments = assessmentStore.getUserAssessments(memberID);
+        const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
+        const currentBMI = analytics.calculateBMI(sortedAssessments[0],memberID);
+
         const viewData = {
             title: "Member Assessments",
-            assessments: dashboard.sortAssessmentsByDate(assessments),
-            user: userStore.getUserById(memberID)
+            assessments: sortedAssessments,
+            user: userStore.getUserById(memberID),
+            currentBMI: currentBMI,
+            BMICategory: analytics.determineBMICategory(currentBMI),
+            heartColour: analytics.heartColour(currentBMI)
         };
-        logger.info("about to render", assessmentStore.getUserAssessments(memberID));
+
         response.render("trainerMember", viewData);
     },
 
@@ -57,6 +66,7 @@ const trainerDashboard = {
     {
         const memberID = request.params.id;
         logger.info("Deleting member", memberID);
+        assessmentStore.removeUserAssessments(memberID);
         userStore.removeMember(memberID);
 
         const viewData = {

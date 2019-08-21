@@ -14,24 +14,23 @@
         {{#each members}}
         <tr>
             <td class="center aligned">
-                <script src="/controllers/analytics.js"></script>
-                <script>analytics.folderColour({{gender}})</script>
-                <i class="big red folder icon"></i>
-                {{folderColour}}
-
+                <i class="big {{colour}} folder icon"></i>
             </td>
 
             <td style="font-size: 120%"><a href="/memberAssessments/{{id}}" style="font-weight: bold">
-                {{firstName}} {{lastName}} {{gender}}</a>
-                <p>{{numberOfAssessments}} Assessments</p></td>
+                {{firstName}} {{lastName}}</a>
+                <p>{{numberOfAssessments}} Assessments</p>
+            </td>
 
             <td class="center aligned" data-tooltip="Delete {{firstName}}"><a href="/trainer/{{id}}/deletemember">
                 <i class="large red trash alternate icon"></i></a></td>
-            <p>{{folderColour}}</p>
+
         </tr>
         {{/each}}
         </tbody>
     </table>
 </section>
 
-<p>{{folderColour}}</p>
+<section>{{colour}}</section>
+
+

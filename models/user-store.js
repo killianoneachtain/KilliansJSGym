@@ -24,6 +24,12 @@ const userStore = {
     return this.store.findOneBy(this.collection, { email: email });
   },
 
+  getGenderById(id)
+  {
+    const user = this.store.findOneBy(this.collection,{id:id});
+    return user.gender;
+  },
+
   saveUser()
   {
     this.store.save();

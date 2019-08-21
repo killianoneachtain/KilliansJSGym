@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const userStore = require("../models/user-store");
 const trainerStore = require("../models/trainer-store");
@@ -46,8 +46,7 @@ const accounts = {
       height: Number(request.body.height),
       startingWeight: Number(request.body.startingWeight),
       id : uuid(),
-      numberOfAssessments: 0,
-      BMI: Number((request.body.startingWeight / Math.pow((request.body.height), 2.0) * 10000)).toFixed(2),
+      numberOfAssessments: 0
         };
     userStore.addUser(user);
     logger.info(`registering ${user.email}`);
@@ -79,7 +78,7 @@ const accounts = {
   getCurrentUser(request)
   {
     const memberEmail = request.cookies.assessment;
-    logger.info("accounts / getCurrentUser email is : " + memberEmail)
+    logger.info("accounts / getCurrentUser email is : " + memberEmail);
     return userStore.getUserByEmail(memberEmail);
   }
 };
