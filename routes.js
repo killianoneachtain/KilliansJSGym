@@ -28,4 +28,5 @@ router.get("/memberAssessments/:id", trainer.viewAssessments);
 router.post("/trainer/:id/addcomment",  trainer.addComment);
 router.get("/trainer/:id/deletemember", trainer.deleteMember);
 
+
 module.exports = router;

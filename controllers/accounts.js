@@ -66,7 +66,7 @@ const accounts = {
     }
     else if (trainer)
     {
-      response.cookie('gymTrainer', trainer.email);
+      response.cookie("trainer", trainer.email);
       logger.info(`logging in ${trainer.email}`);
       response.redirect("/trainer");
     }
@@ -80,6 +80,13 @@ const accounts = {
     const memberEmail = request.cookies.assessment;
     logger.info("accounts / getCurrentUser email is : " + memberEmail);
     return userStore.getUserByEmail(memberEmail);
+  },
+
+  getCurrentTrainer(request)
+  {
+    const trainerEmail = request.cookies.trainer;
+    logger.info("the trainer is : " + trainerEmail);
+    return trainerStore.getTrainerByEmail(trainerEmail);
   }
 };
 

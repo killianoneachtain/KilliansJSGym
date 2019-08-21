@@ -4,7 +4,7 @@ const accounts = require("./accounts.js");
 const logger = require("../utils/logger");
 const assessmentStore = require("../models/assessment-store");
 const userStore = require("../models/user-store");
-const trainerCtrl = require("../models/trainer-store");
+const trainerStore = require("../models/trainer-store");
 const analytics = require("../controllers/analytics");
 const dashboard = require("../controllers/dashboard");
 
@@ -13,11 +13,12 @@ const uuid = require("uuid");
 const trainerDashboard = {
     index(request, response) {
         logger.info("trainerCtrl rendering");
-        const allMembers = userStore.getAllUsers();
+        const trainer = accounts.getCurrentTrainer(request);
 
         const viewData = {
             title: "Trainer Dashboard",
             members: userStore.getAllUsers(),
+            trainer: trainerStore.getTrainerByEmail(trainer.email)
             //colour: allMembers.forEach((e)=>{analytics.folderColour(allMembers.gender)})
         };
 
