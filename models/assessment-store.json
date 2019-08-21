@@ -1,45 +1,6 @@
 {
   "assessmentCollection": [
     {
-      "id": "da9badee-404f-4db8-a256-9ae001238f2e",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "weight": 112.26,
-      "chest": 56,
-      "thigh": 56,
-      "upperArm": 56,
-      "waist": 56,
-      "hips": 56,
-      "comment": "",
-      "date": "21-Aug-2019 02:38:40",
-      "trend": ""
-    },
-    {
-      "id": "8fc9cfa0-6eb4-470a-a31e-87538e8e6bfb",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "weight": 123.05,
-      "chest": 50.12,
-      "thigh": 30.15,
-      "upperArm": 10.32,
-      "waist": 30.34,
-      "hips": 30.22,
-      "comment": "",
-      "date": "21-Aug-2019 02:39:02",
-      "trend": ""
-    },
-    {
-      "id": "c0e4e285-e5f8-43b3-9fa8-3d82dc914b39",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "weight": 112.26,
-      "chest": 50.03,
-      "thigh": 56,
-      "upperArm": 56,
-      "waist": 56,
-      "hips": 56,
-      "comment": "",
-      "date": "21-Aug-2019 02:41:19",
-      "trend": ""
-    },
-    {
       "id": "5d034c24-74f1-45bc-b0eb-e3dfd64c13db",
       "userId": "279e825d-600c-4cc5-b899-b32ee130f9a9",
       "weight": 56.36,
@@ -79,32 +40,6 @@
       "trend": ""
     },
     {
-      "id": "5e6d6bf3-241a-413a-9513-68dc32dc7de2",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "weight": 78.26,
-      "chest": 56,
-      "thigh": 56,
-      "upperArm": 56,
-      "waist": 56,
-      "hips": 56,
-      "comment": "",
-      "date": "21-Aug-2019 15:47:31",
-      "trend": ""
-    },
-    {
-      "id": "3952bf59-78f1-40c0-b30e-48e2a0430288",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "weight": 71.37,
-      "chest": 56,
-      "thigh": 56,
-      "upperArm": 56,
-      "waist": 56,
-      "hips": 56,
-      "comment": "kool",
-      "date": "21-Aug-2019 16:58:20",
-      "trend": ""
-    },
-    {
       "id": "0b71590e-af39-4d8f-8d6f-1dfa3ecb3149",
       "userId": "f05a567b-2794-4157-8ea2-e66f0d6f3962",
       "weight": 76.8,
@@ -129,6 +64,19 @@
       "comment": "",
       "date": "21-Aug-2019 17:18:26",
       "trend": ""
+    },
+    {
+      "id": "4cf49846-fd3f-4fa2-a166-5c7ed7caa8a8",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "weight": 113.01,
+      "chest": 56,
+      "thigh": 56,
+      "upperArm": 56,
+      "waist": 56,
+      "hips": 56,
+      "comment": "",
+      "date": "21-Aug-2019 20:11:25",
+      "trend": "blue"
     }
   ]
 }

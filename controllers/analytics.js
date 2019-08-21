@@ -164,58 +164,7 @@ const analytics = {
     idealWeightDifferential(assessment)
     {
         return  Math.abs(analytics.idealBodyWeight(assessment)  - assessment.weight).toFixed(2);
-    },
-
-    userTrend(userId)
-    {
-        logger.info("In analytics");
-        logger.info(userId);
-        logger.info("user id is: " + userId);
-        const userAssessments = assessmentStore.getUserAssessments(userId);
-        logger.info(userAssessments);
-        const sortedAssessments = assessmentStore.sortAssessmentsByDate(userAssessments);
-        const arrayLength = sortedAssessments.length;
-        let i =0;
-
-        if(sortedAssessments.length > 1)
-        {
-            for (i =0;i< (arrayLength) - 1; i++)
-            {
-                if(sortedAssessments[i].weight > sortedAssessments[i+1].weight)
-                //if (member.assessmentdetailslist.get(i).getWeight() > member.assessmentdetailslist.get(i + 1).getWeight())
-                {
-                    sortedAssessments[i].trend = "red";
-                    assessmentStore.saveAssessment();
-                    //member.assessmentdetailslist.get(i).setTrend("red");
-                    //member.assessmentdetailslist.get(i).save();
-                } else if (sortedAssessments[i].weight <= sortedAssessments[i+1].weight)
-                {
-                    sortedAssessments[i].trend = "olive";
-                    assessmentStore.saveAssessment();
-                }
-                //else
-                //{
-                //  assessments[i].trend = "blue";
-                //   this.store.save();
-                // }
-
-            }
-            // This sets the oldest(last) assessment in the list to blue
-            sortedAssessments[arrayLength-1].trend = "blue";
-            assessmentStore.saveAssessment();
-            //member.assessmentdetailslist.get((member.assessmentdetailslist.size())-1).setTrend("blue");
-
-            //member.assessmentdetailslist.get((member.assessmentdetailslist.size())-1).save();
-        }
-
-        //If there is only one assessment for the user, the trend is set to'Blue"
-        if(sortedAssessments.length === 1)
-        {
-            sortedAssessments[arrayLength-1].trend = "blue";
-            assessmentStore.saveAssessment();
-        }
     }
-
 
 };
 
