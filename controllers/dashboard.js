@@ -113,8 +113,58 @@ const dashboard = {
       sortedAssessments[arrayLength-1].trend = "blue";
       assessmentStore.saveAssessment();
     }
-  }
+  },
 
+  viewProfile(request,response)
+  {
+    logger.info("profile rendering");
+    const currentUser = accounts.getCurrentUser(request);
+
+    const viewData = {
+      title: "Member Profile",
+      user: currentUser
+    };
+    logger.info("about to render");
+    response.render("profile", viewData);
+  },
+
+  editProfile(request, response)
+  {
+    logger.info("Editing User Profile ");
+    const loggedInUser = accounts.getCurrentUser(request);
+
+    const viewData = {
+      title: "Editing Member Details",
+      user: loggedInUser
+    };
+    response.render("editProfile", viewData);
+  },
+
+  saveProfile(request,response)
+  {
+    logger.info("Saving User Profile");
+    const loggedInUser = accounts.getCurrentUser(request);
+
+    loggedInUser.firstName = request.body.firstName;
+    loggedInUser.lastName = request.body.lastName;
+    loggedInUser.gender = request.body.gender;
+    loggedInUser.email = request.body.email;
+    loggedInUser.password = request.body.password;
+    loggedInUser.address = request.body.address;
+    loggedInUser.height = Number(request.body.height);
+    loggedInUser.startingWeight = Number(request.body.startingWeight);
+
+    userStore.saveUser();
+    logger.info(`saving editted user profile ${loggedInUser.email}`);
+
+    const viewData = {
+      title: "Member Profile",
+      user: loggedInUser
+    };
+    logger.info("about to render");
+    response.render("profile", viewData);
+
+  }
 
 };
 

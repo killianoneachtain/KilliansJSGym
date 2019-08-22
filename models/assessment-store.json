@@ -11,7 +11,7 @@
       "hips": 56,
       "comment": "",
       "date": "21-Aug-2019 04:10:06",
-      "trend": ""
+      "trend": "blue"
     },
     {
       "id": "daf6ffe1-c3eb-46ff-baff-0d37bc7580bd",
@@ -24,7 +24,7 @@
       "hips": 56,
       "comment": "swepiwegpnwnwipeinwpwingwprgniwrpnwprwp",
       "date": "21-Aug-2019 04:13:10",
-      "trend": ""
+      "trend": "red"
     },
     {
       "id": "b68a92e7-c393-4ddb-920e-5d64e019d0c0",
@@ -77,6 +77,32 @@
       "comment": "",
       "date": "21-Aug-2019 20:11:25",
       "trend": "blue"
+    },
+    {
+      "id": "912b13d6-8ca6-4a2b-9a9f-04acfcf96719",
+      "userId": "279e825d-600c-4cc5-b899-b32ee130f9a9",
+      "weight": 110,
+      "chest": 56,
+      "thigh": 56,
+      "upperArm": 56,
+      "waist": 56,
+      "hips": 56,
+      "comment": "",
+      "date": "21-Aug-2019 20:13:44",
+      "trend": "olive"
+    },
+    {
+      "id": "e91e8dc7-0008-4c6c-adf2-51ed87ab4389",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "weight": 112.03,
+      "chest": 56,
+      "thigh": 56,
+      "upperArm": 56,
+      "waist": 56,
+      "hips": 56,
+      "comment": "",
+      "date": "22-Aug-2019 18:12:49",
+      "trend": "olive"
     }
   ]
 }

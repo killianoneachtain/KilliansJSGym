@@ -1,0 +1,21 @@
+{{> menu id="profile"}}
+
+
+<section class="ui raised segment">
+    <div class="ui form">
+        <div class="ui message">
+            <div class="header"><h2><i class="id card icon"></i>{{user.firstName}} {{user.lastName}}'s Current Details : </h2></div>
+            <ul class="list">
+                <li>First Name : {{user.firstName}}</li>
+                <li>Last Name : {{user.lastName}}</li>
+                <li>Gender : {{user.gender}}</li>
+                <li>Email : {{user.email}} </li>
+                <li>Address : {{user.address}}</li>
+                <li>Height : {{user.height}} cm</li>
+                <li>Starting Weight : {{user.startingWeight}} Kg</li>
+            </ul>
+            <br>
+            <a href="/dashboard/editProfile" class="ui medium yellow button">Edit Profile</a>
+        </div>
+    </div>
+</section>

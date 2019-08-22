@@ -1,12 +1,23 @@
 <nav class="ui menu">
-  <header class="ui header item"> <a href="/"> Killian's Gym </a></header>
+  <header class="ui header item" style="color: dodgerblue"> Killian's Gym </header>
   <div class="right menu">
-    <a id="dashboard" class="item" href="/dashboard"> Dashboard  </a>
-    <a id="about" class="item" href="/about"> About </a>
-    <a id="logout" class="item" href="/logout"> Logout </a>
+    <a id="dashboard" class="item" href="/dashboard"><i class="home icon"></i></a>
+      <nav class="ui dropdown item">
+          <i class="user icon"></i>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+              <a id="profile" class="item" href="/dashboard/viewProfile"><i class="address card icon"></i>View / Edit Profile</a>
+              <a id="logout" class="item" href="/logout"><i class="sign out alternate icon"></i>Logout</a>
+          </div>
+      </nav>
   </div>
 </nav>
 
 <script>
   $("#{{id}}").addClass("active item");
+</script>
+<script>
+    $('.ui.dropdown')
+            .dropdown()
+    ;
 </script>
