@@ -35,6 +35,18 @@
       "startingWeight": 65.25,
       "id": "f05a567b-2794-4157-8ea2-e66f0d6f3962",
       "numberOfAssessments": 3
+    },
+    {
+      "firstName": "Mick",
+      "lastName": "Muscles",
+      "gender": "male",
+      "email": "mick@me.com",
+      "password": "secret",
+      "address": "66 Glenside, Ballycarnane Woods",
+      "height": 179,
+      "startingWeight": 84.26,
+      "id": "c220ef48-10e8-4b0e-b0a7-33caab7e05bf",
+      "numberOfAssessments": 0
     }
   ]
 }

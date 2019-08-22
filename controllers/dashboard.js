@@ -17,7 +17,28 @@ const dashboard = {
     const assessments = assessmentStore.getUserAssessments(currentUser.id);
     const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
     const currentBMI = analytics.calculateBMI(sortedAssessments[0],currentUser.id);
-    const currentWeight = sortedAssessments[0].weight;
+
+    let currentWeight = 0;
+    let latestAssessment = sortedAssessments[0];
+    let idealWeight = 0;
+    let idealWeightIndicator = "Blue";
+    let weightDifferential = 0;
+    if (assessments.length == 0)
+    {
+      currentWeight = currentUser.startingWeight;
+      logger.info("Weight is starting weight");
+    }
+    else
+    {
+      currentWeight = latestAssessment.weight;
+      idealWeight = analytics.idealBodyWeight(sortedAssessments[0]);
+      idealWeightIndicator = analytics.isIdealWeight(sortedAssessments[0]);
+      weightDifferential = analytics.idealWeightDifferential(sortedAssessments[0]);
+      logger.info("Weight is latest weight");
+    }
+
+
+
 
     dashboard.userTrend(currentUser.id);
 
@@ -28,10 +49,10 @@ const dashboard = {
       currentBMI: currentBMI,
       BMICategory: analytics.determineBMICategory(currentBMI),
       heartColour: analytics.heartColour(currentBMI),
-      idealWeight: analytics.idealBodyWeight(sortedAssessments[0]),
-      tachometerColour: analytics.isIdealWeight(sortedAssessments[0]),
+      idealWeight: idealWeight,
+      tachometerColour: idealWeightIndicator,
       currentWeight: currentWeight,
-      weightDifferential: analytics.idealWeightDifferential(sortedAssessments[0])
+      weightDifferential: weightDifferential
     };
     logger.info("about to render");
     response.render("dashboard", viewData);
