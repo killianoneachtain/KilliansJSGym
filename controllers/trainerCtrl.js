@@ -19,8 +19,8 @@ const trainerDashboard = {
         const viewData = {
             title: "Trainer Dashboard",
             members: userStore.getAllUsers(),
-            trainer: trainerStore.getTrainerByEmail(trainer.email)
-            //colour: trainerDashboard.pinkOrBlue()
+            trainer: trainerStore.getTrainerByEmail(trainer.email),
+            //userIconColour: dashboard.genderColour(loggedInUser)
         };
 
         response.render("trainer", viewData);

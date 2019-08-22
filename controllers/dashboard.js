@@ -59,7 +59,8 @@ const dashboard = {
       idealWeight: analytics.idealBodyWeight(latestAssessment),
       tachometerColour: analytics.isIdealWeight(latestAssessment),
       currentWeight: currentWeight,
-      weightDifferential: analytics.idealWeightDifferential(latestAssessment)
+      weightDifferential: analytics.idealWeightDifferential(latestAssessment),
+      userIconColour: dashboard.genderColour(currentUser)
     };
     logger.info("about to render");
     response.render("dashboard", viewData);
@@ -191,7 +192,22 @@ const dashboard = {
     };
     logger.info("about to render");
     response.render("profile", viewData);
+  },
 
+  genderColour(user)
+  {
+    if (user.gender === "male")
+    {
+      return "blue";
+    }
+    else if (user.gender === "female")
+    {
+      return "pink";
+    }
+    else
+    {
+      return "olive";
+    }
   }
 
 };
