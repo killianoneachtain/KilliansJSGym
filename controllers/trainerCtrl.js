@@ -15,9 +15,6 @@ const trainerDashboard = {
         logger.info("trainerCtrl rendering");
         const trainer = accounts.getCurrentTrainer(request);
 
-         const allusers = userStore.getAllUsers();
-         const colour = "olive";
-
 
         const viewData = {
             title: "Trainer Dashboard",
@@ -47,11 +44,38 @@ const trainerDashboard = {
     {
         logger.info("trainer/member rendering");
         const memberID = request.params.id;
-
-        const member = userStore.getUserById(memberID);
+        const loggedInUser = userStore.getUserById(memberID);
 
         const assessments = assessmentStore.getUserAssessments(memberID);
         const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
+
+        let currentWeight = 0;
+        let latestAssessment = sortedAssessments[0];
+
+        if (assessments.length == 0)
+        {
+            latestAssessment = {
+                id: "",
+                userId: loggedInUser.id,
+                weight: loggedInUser.startingWeight,
+                chest: 0,
+                thigh: 0,
+                upperArm: 0,
+                waist: 0,
+                hips: 0,
+                comment: " ",
+                date: " ",
+                trend: " "
+            };
+            currentWeight = loggedInUser.startingWeight;
+            logger.info("Weight is starting weight");
+        }
+        else
+        {
+            currentWeight = latestAssessment.weight;
+            logger.info("Weight is latest weight");
+        }
+
         const currentBMI = analytics.calculateBMI(sortedAssessments[0],memberID);
 
         const viewData = {
@@ -60,7 +84,11 @@ const trainerDashboard = {
             user: userStore.getUserById(memberID),
             currentBMI: currentBMI,
             BMICategory: analytics.determineBMICategory(currentBMI),
-            heartColour: analytics.heartColour(currentBMI)
+            heartColour: analytics.heartColour(currentBMI),
+            idealWeight: analytics.idealBodyWeight(latestAssessment),
+            tachometerColour: analytics.isIdealWeight(latestAssessment),
+            currentWeight: currentWeight,
+            weightDifferential: analytics.idealWeightDifferential(latestAssessment)
         };
 
         response.render("trainerMember", viewData);
