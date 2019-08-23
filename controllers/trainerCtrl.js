@@ -119,7 +119,7 @@ const trainerDashboard = {
             members: userStore.getAllUsers(),
         };
 
-        response.render("trainer",viewData);
+        response.redirect("/trainer");
 
     },
 
