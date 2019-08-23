@@ -32,8 +32,6 @@ const assessmentStore = {
 
     user.numberOfAssessments += 1;
 
-    //analytics.userTrend(user.id);
-
     userStore.saveUser(user);
 
     this.store.save();

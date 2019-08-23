@@ -4,6 +4,7 @@ const accounts = require("./accounts.js");
 const logger = require("../utils/logger");
 const assessmentStore = require("../models/assessment-store");
 const userStore = require("../models/user-store");
+const goalStore = require("../models/goal-store");
 const analytics = require("../controllers/analytics");
 const uuid = require("uuid");
 
@@ -16,6 +17,9 @@ const dashboard = {
 
     const assessments = assessmentStore.getUserAssessments(currentUser.id);
     const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
+    logger.info("Current User ID is : " + currentUser.id);
+    const userGoals = goalStore.getUserGoals(currentUser.id);
+    logger.info("Goals are : " + userGoals);
 
     let currentWeight = 0;
     let latestAssessment = sortedAssessments[0];
@@ -47,6 +51,7 @@ const dashboard = {
 
     const currentBMI = analytics.calculateBMI(latestAssessment,currentUser.id);
 
+
     dashboard.userTrend(currentUser.id);
 
     const viewData = {
@@ -60,7 +65,8 @@ const dashboard = {
       tachometerColour: analytics.isIdealWeight(latestAssessment),
       currentWeight: currentWeight,
       weightDifferential: analytics.idealWeightDifferential(latestAssessment),
-      userIconColour: dashboard.genderColour(currentUser)
+      userIconColour: dashboard.genderColour(currentUser),
+      goals: userGoals
     };
     logger.info("about to render");
     response.render("dashboard", viewData);
