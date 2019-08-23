@@ -43,7 +43,10 @@ const accounts = {
       if (memberEmail === request.body.email)
       {
         logger.info("Email already exists :" + memberEmail);
-        response.render("emailExists.hbs");
+        const viewData = {
+          member: memberEmail
+        }
+        response.render("emailExists.hbs", viewData);
       }
     }
     else {
