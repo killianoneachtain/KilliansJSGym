@@ -190,24 +190,24 @@ const dashboard = {
       title: "Member Profile",
       user: loggedInUser
     };
-    logger.info("about to render");
+    logger.info("about to render profile");
     response.render("profile", viewData);
   },
 
   genderColour(user)
   {
-    if (user.gender === "male")
-    {
-      return "blue";
-    }
-    else if (user.gender === "female")
-    {
-      return "pink";
-    }
-    else
-    {
-      return "olive";
-    }
+    logger.info("In genderColour function using: " + user.firstName);
+
+      if (user.gender === "male")
+      {
+        return "blue";
+      } else if (user.gender === "female")
+      {
+        return "pink";
+      } else
+        {
+        return "olive";
+      }
   }
 
 };

@@ -8,36 +8,49 @@ const trainerStore = require("../models/trainer-store");
 const analytics = require("../controllers/analytics");
 const dashboard = require("../controllers/dashboard");
 
+
 const uuid = require("uuid");
 
 const trainerDashboard = {
     index(request, response) {
         logger.info("trainerCtrl rendering");
         const trainer = accounts.getCurrentTrainer(request);
+        const users = userStore.getAllUsers();
 
-
+        let genderColourArray = [];
+        genderColourArray = trainerDashboard.pinkOrBlue();
         const viewData = {
             title: "Trainer Dashboard",
-            members: userStore.getAllUsers(),
+            members: users,
             trainer: trainerStore.getTrainerByEmail(trainer.email),
-            //userIconColour: dashboard.genderColour(loggedInUser)
+            userIconColour: genderColourArray
         };
+        logger.info("Icon Array is : " + genderColourArray);
 
         response.render("trainer", viewData);
     },
 
     pinkOrBlue()
     {
-        let users = trainerDashboard.index.members;
+        const users = userStore.getAllUsers();
+
         let i = 0;
+        let genderColourArray = [];
+
         for(i=0; i < users.length;i++)
         {
-            if (users.gender === "male") {
-                return "blue";
-            } else if (users.gender === "female") {
-                return "pink";
-            } else return "olive";
+            const gender = users[i].gender;
+            if (gender === "male")
+            {
+                genderColourArray[i] =  'blue';
+            }
+            else if (gender === "female")
+            {
+                genderColourArray[i] = 'pink';
+
+            } else genderColourArray[i] = 'olive';
         }
+        return genderColourArray;
     },
 
     viewAssessments(request, response)
@@ -88,7 +101,8 @@ const trainerDashboard = {
             idealWeight: analytics.idealBodyWeight(latestAssessment),
             tachometerColour: analytics.isIdealWeight(latestAssessment),
             currentWeight: currentWeight,
-            weightDifferential: analytics.idealWeightDifferential(latestAssessment)
+            weightDifferential: analytics.idealWeightDifferential(latestAssessment),
+            userIconColour: dashboard.genderColour(loggedInUser)
         };
 
         response.render("trainerMember", viewData);

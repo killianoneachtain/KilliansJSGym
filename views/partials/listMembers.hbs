@@ -1,6 +1,5 @@
-<section class="ui raised segment">
-    <header class="ui header">
-    </header>
+<!---------- NEW TABLE LAYOUT ---------------------------->
+<section class="ui raised segment" style="column-gap: 0px">
     <table class="ui very basic striped table">
         <thead>
         <tr>
@@ -10,30 +9,46 @@
             <th class="one wide"></th>
         </tr>
         </thead>
-        <tbody>
-        {{#each members}}
-        <tr>
-            <td class="center aligned">
-                <i class="big {{userIconColour}} folder icon"></i>
-            </td>
+    </table>
 
-            <td style="font-size: 120%"><a href="/memberAssessments/{{id}}" style="font-weight: bold">
-                <h2>{{firstName}} {{lastName}}</h2></a><p>
-                <div class="ui large label">
-                    Assessments
-                    <div class="detail">{{numberOfAssessments}}</div>
-                </div>
-            </td>
 
-            <td class="center aligned" data-tooltip="Delete {{firstName}}"><a href="/trainer/{{id}}/deletemember">
-                <i class="large red trash alternate icon"></i></a></td>
-
+    <div class="ui grid">
+        <div class="two wide column">
+    <table class="ui very basic two wide striped table">
+        <tbody class="two wide center aligned">
+        <!-- https://emberigniter.com/handlebars-access-array-value-with-index/ --->
+        {{#each userIconColour as |item|}}
+            <tr>
+                <td class="center aligned">
+                    <h2><i class="big {{item}} folder icon" ></i></h2>
+                    <br>
+                </td>
+        {{/each}}
         </tr>
+        </tbody>
+            </table>
+        </div>
+            <div class="fourteen wide column">
+    <table class="ui very basic striped table">
+        <tbody class="thirteen wide">
+            {{#each members}}
+                <td style="font-size: 120%"><a href="/memberAssessments/{{id}}" style="font-weight: bold">
+                    <h2>{{firstName}} {{lastName}}</h2></a><p>
+                    <div class="ui large label">
+                        Assessments
+                        <div class="detail">{{numberOfAssessments}}</div>
+                    </div>
+                </td>
+
+                <td class="center aligned" data-tooltip="Delete {{firstName}}"><a href="/trainer/{{id}}/deletemember">
+                    <i class="large red trash alternate icon"></i></a></td>
+
+            </tr>
         {{/each}}
         </tbody>
     </table>
+    </div>
+    </div>
 </section>
-
-<section>{{colour}}</section>
 
 

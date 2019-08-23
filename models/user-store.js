@@ -11,6 +11,12 @@ const userStore = {
     return this.store.findAll(this.collection);
   },
 
+  getAllGenders()
+  {
+    const users = userStore.getAllUsers();
+
+  },
+
   addUser(user) {
     this.store.add(this.collection, user);
     this.store.save();
