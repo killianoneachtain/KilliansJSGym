@@ -35,22 +35,37 @@ const accounts = {
 
   register(request, response)
   {
-    const user =
-        {
-      firstName: request.body.firstName,
-      lastName: request.body.lastName,
-      gender: request.body.gender,
-      email: request.body.email,
-      password: request.body.password,
-      address: request.body.address,
-      height: Number(request.body.height),
-      startingWeight: Number(request.body.startingWeight),
-      id : uuid(),
-      numberOfAssessments: 0
-        };
-    userStore.addUser(user);
-    logger.info(`registering ${user.email}`);
-    response.redirect("/");
+    const member = userStore.getUserByEmail(request.body.email);
+
+    if (member != null)
+    {
+      const memberEmail = member.email;
+      if (memberEmail === request.body.email)
+      {
+        logger.info("Email already exists :" + memberEmail);
+        response.render("emailExists.hbs");
+      }
+    }
+    else {
+
+      const user =
+          {
+            firstName: request.body.firstName,
+            lastName: request.body.lastName,
+            gender: request.body.gender,
+            email: request.body.email,
+            password: request.body.password,
+            address: request.body.address,
+            height: Number(request.body.height),
+            startingWeight: Number(request.body.startingWeight),
+            id: uuid(),
+            numberOfAssessments: 0
+          };
+
+      userStore.addUser(user);
+      logger.info(`registering ${user.email}`);
+      response.redirect("/");
+    }
   },
 
   authenticate(request, response)
