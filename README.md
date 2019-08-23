@@ -1,4 +1,10 @@
-Welcome to the Playlist 4
-=========================
+Welcome to the Killian's Gym
+=============================
 
-Version 4 of the Playlist application
+Version 2.7 Of Killian's Gym Application.
+
+Built by : Killian O'Neachtain
+
+WIT ID : 20023634
+
+Email : 20023634@student.wit.ie
