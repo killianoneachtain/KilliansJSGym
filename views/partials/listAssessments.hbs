@@ -1,6 +1,6 @@
 
 <section class="ui stacked segment">
-    <table class="ui striped celled table">
+    <table class="ui fixed striped celled table">
         <thead>
         <tr>
             <th>Date</th>
@@ -22,12 +22,13 @@
                 <td data-label="Weight">{{weight}}</td>
                 <td data-label="Chest">{{chest}}</td>
                 <td data_label="Thigh">{{thigh}}</td>
-                <td>{{upperArm}}</td>
-                <td>{{waist}}</td>
-                <td>{{hips}}</td>
+                <td data_label="Upper Arm">{{upperArm}}</td>
+                <td data_label="Waist">{{waist}}</td>
+                <td data_label="Hips">{{hips}}</td>
                 <td data-label="Trend"><i class="ui small {{trend}} tag label"></i></td>
                 <td data-label="Comment">{{comment}}</td>
-                <td class="center aligned"><a href="/dashboard/deleteAssessment/{{id}}">
+                <td class="center aligned">
+                    <a href="/dashboard/deleteAssessment/{{id}}" data-tooltip="Delete">
                     <i class="centered trash alternate outline icon"></i></a></td>
             </tr>
         {{/each}}

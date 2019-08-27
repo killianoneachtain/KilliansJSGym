@@ -9,6 +9,7 @@ const about = require("./controllers/about.js");
 const assessment = require("./controllers/assessment.js");
 const analytics = require("./controllers/analytics");
 const trainer = require("./controllers/trainerCtrl.js");
+const goals = require("./controllers/goals");
 
 router.get("/", accounts.index);
 router.get("/login", accounts.login);
@@ -26,10 +27,14 @@ router.post("/dashboard/saveProfile", dashboard.saveProfile);
 
 router.get("/about", about.index);
 
+router.get("/memberGoals", goals.index);
+router.post("/dashboard/memberAddGoal", goals.memberAddGoal);
+
 router.get("/trainer", trainer.index);
 router.get("/memberAssessments/:id", trainer.viewAssessments);
 router.post("/trainer/:id/addcomment",  trainer.addComment);
 router.get("/trainer/:id/deletemember", trainer.deleteMember);
+router.post("/trainer/:id/addGoal", goals.trainerAddGoal);
 
 
 module.exports = router;

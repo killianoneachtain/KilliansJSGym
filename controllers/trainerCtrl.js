@@ -5,6 +5,7 @@ const logger = require("../utils/logger");
 const assessmentStore = require("../models/assessment-store");
 const userStore = require("../models/user-store");
 const trainerStore = require("../models/trainer-store");
+const goalStore = require("../models/goal-store");
 const analytics = require("../controllers/analytics");
 const dashboard = require("../controllers/dashboard");
 
@@ -62,10 +63,14 @@ const trainerDashboard = {
         const assessments = assessmentStore.getUserAssessments(memberID);
         const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
 
+        const openGoals = goalStore.getOpenGoals(loggedInUser.id);
+        const missedGoals = goalStore.getMissedGoals(loggedInUser.id);
+        const achievedGoals = goalStore.getAchievedGoals(loggedInUser.id);
+
         let currentWeight = 0;
         let latestAssessment = sortedAssessments[0];
 
-        if (assessments.length == 0)
+        if (assessments.length === 0)
         {
             latestAssessment = {
                 id: "",
@@ -102,7 +107,10 @@ const trainerDashboard = {
             tachometerColour: analytics.isIdealWeight(latestAssessment),
             currentWeight: currentWeight,
             weightDifferential: analytics.idealWeightDifferential(latestAssessment),
-            userIconColour: dashboard.genderColour(loggedInUser)
+            userIconColour: dashboard.genderColour(loggedInUser),
+            openGoals: openGoals,
+            missedGoals: missedGoals,
+            achievedGoals : achievedGoals
         };
 
         response.render("trainerMember", viewData);

@@ -1,0 +1,24 @@
+<section class="ui raised segment" style="background-color: lightsteelblue">
+<form class ="ui equal width form" action="/dashboard/memberAddGoal" method="POST">
+    <div class="two fields">
+        <div class="required field">
+            <label>Goal Date</label>
+            <div class="ui right labeled input">
+                <input type="date" name="completionDate" required>
+            </div>
+        </div>
+
+        <div class="required field">
+        <label>Weight to Achieve</label>
+        <div class="ui right labeled input">
+            <input placeholder="00.00" type="number" step="0.01" min="30.0" max="250.0" name="goalWeight" required>
+            <div class="ui basic label">
+                kg
+            </div>
+        </div>
+    </div>
+    </div>
+    <button class="ui blue submit button">Add Goal</button>
+    <i class="red asterisk icon"></i>Denotes required field<br>
+</form>
+</section>

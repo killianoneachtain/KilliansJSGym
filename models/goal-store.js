@@ -26,36 +26,61 @@ const goalStore = {
         return this.store.findBy(this.collection, { userId: userId });
     },
 
-    addGoal(request, response)
+    getOpenGoals(userId)
     {
-        let member = userStore.getUserById(request);
-        let trainer = trainerStore.getTrainerById(request);
-
-        let addedBy = "";
-        if (member == null)
+        const allGoals = goalStore.getUserGoals(userId);
+        const openGoals = [];
+        let i = 0;
+        for (i=0;i<allGoals.length;i++)
         {
-                addedBy = trainer.email;
-        } else if (trainer == null)
-        {
-            addedBy = member.email;
+            if (allGoals[i].status === "Open")
+            {
+               openGoals.push(allGoals[i]);
+            }
         }
+        return openGoals;
+    },
 
-        const goal =
-                {
-                    id: uuid(),
-                    userId: request,
-                    createdBy: addedBy,
-                    creationDate: assessmentStore.formatDate(),
-                    completionDate: request.body.date,
-                    measurement: Number(request.body.measurement),
-                    status: ""
-                };
-            logger.info("Adding Goal" + goal);
-        this.store.add(this.collection, goal);
-        this.store.save();
-            response.redirect("/dashboard");
+    getMissedGoals(userId)
+    {
+        const allGoals = goalStore.getUserGoals(userId);
+        const missedGoals = [];
+        let i = 0;
+        for (i=0;i<allGoals.length;i++)
+        {
+            if (allGoals[i].status === "Missed")
+            {
+                missedGoals.push(allGoals[i]);
+            }
+        }
+        return missedGoals;
 
     },
+
+    getAchievedGoals(userId)
+    {
+        const allGoals = goalStore.getUserGoals(userId);
+        const achievedGoals = [];
+        let i = 0;
+        for (i=0;i<allGoals.length;i++)
+        {
+            if (allGoals[i].status === "Achieved")
+            {
+                achievedGoals.push(allGoals[i]);
+            }
+        }
+        return achievedGoals;
+
+    },
+
+    addGoal(goal)
+    {
+
+        this.store.add(this.collection, goal);
+        this.store.save();
+    },
+
+
 
     removeGoal(id)
     {

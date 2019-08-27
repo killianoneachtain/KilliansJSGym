@@ -17,14 +17,18 @@ const dashboard = {
 
     const assessments = assessmentStore.getUserAssessments(currentUser.id);
     const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
+
     logger.info("Current User ID is : " + currentUser.id);
-    const userGoals = goalStore.getUserGoals(currentUser.id);
-    logger.info("Goals are : " + userGoals);
+    const openGoals = goalStore.getOpenGoals(currentUser.id);
+    const missedGoals = goalStore.getMissedGoals(currentUser.id);
+    const achievedGoals = goalStore.getAchievedGoals(currentUser.id);
+
+    logger.info("Goals are : " + openGoals);
 
     let currentWeight = 0;
     let latestAssessment = sortedAssessments[0];
 
-    if (assessments.length == 0)
+    if (assessments.length === 0)
     {
       latestAssessment = {
         id: "",
@@ -66,7 +70,9 @@ const dashboard = {
       currentWeight: currentWeight,
       weightDifferential: analytics.idealWeightDifferential(latestAssessment),
       userIconColour: dashboard.genderColour(currentUser),
-      goals: userGoals
+      openGoals: openGoals,
+      missedGoals: missedGoals,
+      achievedGoals : achievedGoals
     };
     logger.info("about to render");
     response.render("dashboard", viewData);

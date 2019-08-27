@@ -1,6 +1,6 @@
 <span>
 <div class="ui inline dropdown">
-    <div class="text">Open</div>
+    <div class="text"> {{openGoals.length}} Open<i class="small caret down icon"></i></div>
 <div class="menu">
     <div class="item">
         <table class="ui striped celled table">
@@ -13,11 +13,11 @@
             </tr>
             </thead>
             <tbody>
-            {{#each goals}}
+            {{#each openGoals}}
                 <tr>
                     <td>{{creationDate}}</td>
                     <td>{{completionDate}}</td>
-                    <td>{{measurement}}</td>
+                    <td>{{goalWeight}}</td>
                     <td>{{status}}</td>
                 </tr>
             {{/each}}

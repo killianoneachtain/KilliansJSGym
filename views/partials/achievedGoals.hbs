@@ -1,0 +1,34 @@
+<span>
+<div class="ui inline dropdown">
+    <div class="text">{{achievedGoals.length}} Achieved <i class="small caret down icon"></i></div>
+<div class="menu">
+    <div class="item">
+        <table class="ui striped celled table">
+            <thead>
+            <tr>
+                <th>Creation Date</th>
+                <th>Completion Date</th>
+                <th>Weight to Achieve </th>
+                <th>Created By</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each achievedGoals}}
+                <tr>
+                    <td>{{creationDate}}</td>
+                    <td>{{completionDate}}</td>
+                    <td>{{goalWeight}}</td>
+                    <td>{{createdBy}}</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</div>
+</span>
+
+<script>$('.ui.dropdown')
+        .dropdown()
+;</script>

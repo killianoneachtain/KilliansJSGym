@@ -1,0 +1,71 @@
+<section class="ui raised segment">
+    <h2>Current Open Goals : {{openGoals.length}}</h2>
+<table class="ui green celled table">
+    <thead>
+    <tr>
+        <th>Creation Date</th>
+        <th>Created By</th>
+        <th>Weight to Achieve</th>
+        <th>Completion Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each openGoals}}
+    <tr>
+        <td>{{creationDate}}</td>
+        <td>{{createdBy}}</td>
+        <td>{{goalWeight}}</td>
+        <td>{{completionDate}}</td>
+    </tr>
+    {{/each}}
+    </tbody>
+</table>
+</section>
+
+<section class="ui raised segment">
+    <h2><i class="red times icon"></i> Missed Goals : {{missedGoals.length}}</h2>
+    <table class="ui red celled table">
+        <thead>
+        <tr>
+            <th>Creation Date</th>
+            <th>Created By</th>
+            <th>Weight to Achieve</th>
+            <th>Completion Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each missedGoals}}
+            <tr class="negative">
+                <td>{{creationDate}}</td>
+                <td>{{createdBy}}</td>
+                <td>{{goalWeight}}</td>
+                <td>{{completionDate}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</section>
+
+<section class="ui raised segment">
+    <h2><i class="green check icon"></i> Achieved Goals : {{achievedGoals.length}}</h2>
+    <table class="ui green celled table">
+        <thead>
+        <tr>
+            <th>Creation Date</th>
+            <th>Created By</th>
+            <th>Weight to Achieve</th>
+            <th>Completion Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each achievedGoals}}
+            <tr class="positive">
+                <td>{{creationDate}}</td>
+                <td>{{createdBy}}</td>
+                <td>{{goalWeight}}</td>
+                <td>{{completionDate}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</section>
