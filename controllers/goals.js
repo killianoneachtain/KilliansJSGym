@@ -107,37 +107,6 @@ const dashboard = {
         response.redirect("/dashboard");
     },
 
-    trainerAddGoal(request, response)
-    {
-        const loggedInTrainer = accounts.getCurrentTrainer()
-
-        logger.info("Trainer to add Goal to is " + loggedInTrainer);
-
-        const now = Date(Date.now());
-        const currentDate = now.toString();
-
-        const addedByFirst = loggedInTrainer.firstName;
-        const addedByLast = loggedInTrainer.lastName;
-        const addedBy = addedByFirst + " " + addedByLast;
-
-
-        const goal =
-            {
-                id: uuid(),
-                userId: request.params.id,
-                createdBy: addedBy,
-                creationDate: assessmentStore.formatDate(currentDate),
-                completionDate: request.body.completionDate,
-                goalWeight: Number(request.body.goalWeight),
-                status: "Open"
-            };
-        logger.info("Adding Goal" + goal);
-
-        goalStore.addGoal(goal);
-
-        response.redirect("/dashboard");
-    },
-
     viewProfile(request,response)
     {
         logger.info("profile rendering");

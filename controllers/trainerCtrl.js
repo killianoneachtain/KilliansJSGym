@@ -18,13 +18,19 @@ const trainerDashboard = {
         const trainer = accounts.getCurrentTrainer(request);
         const users = userStore.getAllUsers();
 
+
         let genderColourArray = [];
         genderColourArray = trainerDashboard.pinkOrBlue();
+
+        let openGoals = [];
+        openGoals = trainerDashboard.numberOfOpenGoals();
+
         const viewData = {
             title: "Trainer Dashboard",
             members: users,
             trainer: trainerStore.getTrainerByEmail(trainer.email),
-            userIconColour: genderColourArray
+            userIconColour: genderColourArray,
+            openGoals: openGoals
         };
         logger.info("Icon Array is : " + genderColourArray);
 
@@ -52,6 +58,53 @@ const trainerDashboard = {
             } else genderColourArray[i] = 'olive';
         }
         return genderColourArray;
+    },
+
+    numberOfOpenGoals()
+    {
+        const users = userStore.getAllUsers();
+
+        let i = 0;
+        let openGoalsArray = [];
+
+        for(i=0; i < users.length;i++)
+        {
+            const userId = users[i].id;
+            let openGoals = goalStore.getOpenGoals(userId);
+            openGoalsArray.push(openGoals.length);
+        }
+        return openGoalsArray;
+    },
+
+    trainerAddGoal(request, response)
+    {
+        const loggedInTrainer = accounts.getCurrentTrainer(request);
+
+        logger.info("Trainer to add Goal to is " + loggedInTrainer);
+
+        const now = Date(Date.now());
+        const currentDate = now.toString();
+
+        const addedByFirst = loggedInTrainer.firstName;
+        const addedByLast = loggedInTrainer.lastName;
+        const addedBy = addedByFirst + " " + addedByLast;
+
+
+        const goal =
+            {
+                id: uuid(),
+                userId: request.params.id,
+                createdBy: addedBy,
+                creationDate: assessmentStore.formatDate(currentDate),
+                completionDate: request.body.completionDate,
+                goalWeight: Number(request.body.goalWeight),
+                status: "Open"
+            };
+        logger.info("Adding Goal" + goal);
+
+        goalStore.addGoal(goal);
+
+        response.redirect("/dashboard");
     },
 
     viewAssessments(request, response)

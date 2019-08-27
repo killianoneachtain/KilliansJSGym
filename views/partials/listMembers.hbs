@@ -1,5 +1,5 @@
 <!---------- NEW TABLE LAYOUT ---------------------------->
-<section class="ui raised segment" style="column-gap: 0px">
+<section class="ui raised segment" style="column-gap: 0px;grid-column-gap: 0px">
     <table class="ui very basic striped table">
         <thead>
         <tr>
@@ -13,8 +13,8 @@
     </table>
 
 
-    <div class="ui grid">
-        <div class="two wide column">
+    <div class="ui grid" style="grid-column-gap: 0px;">
+        <div class="two wide column" style="padding: 0px">
     <table class="ui very basic two wide striped table">
         <tbody class="two wide center aligned">
         <!-- https://emberigniter.com/handlebars-access-array-value-with-index/ --->
@@ -29,9 +29,9 @@
         </tbody>
             </table>
         </div>
-            <div class="fourteen wide column">
+            <div class="twelve wide column" style="padding: 0px">
     <table class="ui very basic striped table">
-        <tbody class="thirteen wide">
+        <tbody>
             {{#each members}}
                 <td style="font-size: 120%"><a href="/memberAssessments/{{id}}" style="font-weight: bold">
                     <h2>{{firstName}} {{lastName}}</h2></a><p>
@@ -40,16 +40,36 @@
                         <div class="detail">{{numberOfAssessments}}</div>
                     </div>
                 </td>
-
-                <td class="center aligned" data-tooltip="Delete {{firstName}}"><a href="/trainer/{{id}}/deletemember">
+                <td class="center aligned"><a href="/trainer/{{id}}/deletemember">
                     <i class="large red trash alternate icon"></i></a></td>
+
 
             </tr>
         {{/each}}
         </tbody>
     </table>
     </div>
-    </div>
+        <div class="two wide column" style="padding: 0px;">
+            <table class="ui very basic two wide striped table">
+                <tbody class="center aligned">
+                <!-- https://emberigniter.com/handlebars-access-array-value-with-index/ --->
+                {{#each openGoals as |item|}}
+                    <tr>
+                        <td class="center aligned">
+                            <div class="ui large label" style="padding: 15px;margin-top: 19px;background-color: lightgray">
+                            Goals :
+                            <div class="detail">{{item}}</div>
+                        </div>
+                            <br>
+                            <br>
+                        </td>
+                {{/each}}
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+
 </section>
 
 

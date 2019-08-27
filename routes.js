@@ -34,7 +34,7 @@ router.get("/trainer", trainer.index);
 router.get("/memberAssessments/:id", trainer.viewAssessments);
 router.post("/trainer/:id/addcomment",  trainer.addComment);
 router.get("/trainer/:id/deletemember", trainer.deleteMember);
-router.post("/trainer/:id/addGoal", goals.trainerAddGoal);
+router.post("/trainer/:id/addGoal", trainer.trainerAddGoal);
 
 
 module.exports = router;
