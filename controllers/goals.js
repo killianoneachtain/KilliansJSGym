@@ -89,17 +89,20 @@ const dashboard = {
         const addedByLast = loggedInUser.lastName;
         const addedBy = addedByFirst + " " + addedByLast;
 
-        logger.info("The loggedInUer.id is : " + loggedInUser.id);
+        const creationDate = dashboard.formatGoalCreationDate(currentDate);
 
+        const goalDate = dashboard.formatGoalCompletionDate(request.body.completionDate);
+
+        logger.info("The loggedInUer.id is : " + loggedInUser.id);
 
         const goal =
             {
                 id: uuid(),
                 userId: loggedInUser.id,
                 createdBy: addedBy,
-                creationDate: assessmentStore.formatDate(currentDate),
+                creationDate: creationDate,
                 creationWeight: Number(assessmentStore.returnLatestWeight(loggedInUser.id)),
-                completionDate: request.body.completionDate,
+                completionDate: goalDate,
                 goalWeight: Number(request.body.goalWeight),
                 status: "Open"
             };
@@ -107,7 +110,7 @@ const dashboard = {
 
         goalStore.addGoal(goal);
 
-        response.redirect("/dashboard");
+        response.redirect("/memberGoals");
     },
 
     viewProfile(request,response)
@@ -174,6 +177,41 @@ const dashboard = {
         {
             return "olive";
         }
+    },
+
+    formatGoalCreationDate(date)
+    {
+        let day = date.slice(8,10);
+        let month = date.slice(4,7);
+        let year = date.slice(11,15);
+
+        return day + "-" + month + "-" + year;
+    },
+
+    formatGoalCompletionDate(date)
+    {
+        let year = date.slice(0,4);
+        let month = date.slice(5,7);
+        let monthName = dashboard.monthName(month);
+        let day = date.slice(8,10);
+
+        return day + "-" + monthName + "-" + year;
+    },
+
+    monthName(monthNumber)
+    {
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"  ];
+
+        let month = monthNumber - 1;
+
+        return monthNames[month];
+    },
+
+    checkUserGoals(userId)
+    {
+        const allOpenGoals = goalStore.getOpenGoals(userId);
+        const sortedGoals = goalStore.sortGoalsByDate(allOpenGoals);
     }
 
 };

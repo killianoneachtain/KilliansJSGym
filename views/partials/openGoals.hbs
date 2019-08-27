@@ -10,7 +10,6 @@
                 <th>Goal Date</th>
                 <th>Goal Weight</th>
                 <th>Status</th>
-                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -20,9 +19,6 @@
                     <td>{{completionDate}}</td>
                     <td>{{goalWeight}}</td>
                     <td>{{status}}</td>
-                    <td class="center aligned">
-                    <a href="/dashboard/deleteAssessment/{{id}}" data-tooltip="Delete">
-                    <i class="centered orange trash alternate outline icon"></i></a></td>
                 </tr>
             {{/each}}
             </tbody>

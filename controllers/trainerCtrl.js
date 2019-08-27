@@ -8,6 +8,7 @@ const trainerStore = require("../models/trainer-store");
 const goalStore = require("../models/goal-store");
 const analytics = require("../controllers/analytics");
 const dashboard = require("../controllers/dashboard");
+const goals = require("../controllers/goals");
 
 const uuid = require("uuid");
 
@@ -96,7 +97,7 @@ const trainerDashboard = {
                 id: uuid(),
                 userId: request.params.id,
                 createdBy: addedBy,
-                creationDate: assessmentStore.formatDate(currentDate),
+                creationDate: goals.formatGoalCreationDate(currentDate),
                 creationWeight: Number(assessmentStore.returnLatestWeight(request.params.id)),
                 completionDate: request.body.completionDate,
                 goalWeight: Number(request.body.goalWeight),

@@ -13,8 +13,6 @@ const dashboard = {
     logger.info("dashboard rendering");
     const currentUser = accounts.getCurrentUser(request);
 
-    logger.info(currentUser);
-
     const assessments = assessmentStore.getUserAssessments(currentUser.id);
     const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
 

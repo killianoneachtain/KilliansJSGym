@@ -109,12 +109,12 @@ const analytics = {
         if (gender === "male")
         {
             colour = "blue";
-            //colour = "<i class=" + '"' + "big blue folder icon" + '"' + "></i>";
+
         }
         else if (gender === "female")
         {
             colour = "pink";
-            //colour = "<i class=" + '"' + "big pink folder icon" + '"' + "></i>";
+
         }
         return colour;
     },
@@ -122,16 +122,16 @@ const analytics = {
     idealBodyWeight(assessment)
     {
         const user = userStore.getUserById(assessment.userId);
-        logger.info("users gender is:" + user.gender);
+
 
         if (user.gender === "male")
         {
             return (50.00 + ((((user.height) - 152.4) / 2.54) * 2.3)).toFixed(2);
-            //return ((50 + 2.3) * ((user.height * 0.393701) - 60)).toFixed(2);
+
         } else
         {
             return (45.5 + ((((user.height) - 152.4) / 2.54) * 2.3)).toFixed(2);
-            //return ((45.5 + 2.3) * ((user.height * 0.393701) - 60)).toFixed(2);
+
         }
 
 
@@ -139,17 +139,12 @@ const analytics = {
 
     isIdealWeight(assessment)
     {
-        /*
-        (((assessment.weight >= (analytics.idealBodyWeight(assessment) - 0.3)) &&
-        ((assessment.weight <= (analytics.idealBodyWeight(assessment) + 0.3)))))
 
-         */
         const currentWeight = assessment.weight;
         const idealBodyWeight = analytics.idealBodyWeight(assessment);
-        logger.info("The users current weight is : " + currentWeight);
-        logger.info("The users ideal weight is : " + idealBodyWeight);
+
         const differential = (Math.abs(idealBodyWeight - currentWeight)).toFixed(2);
-        logger.info("Differential is : " + differential);
+
         if (differential <= 0.30)
         {
             logger.info("GREEN");

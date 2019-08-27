@@ -22,3 +22,9 @@
     <i class="red asterisk icon"></i>Denotes required field<br>
 </form>
 </section>
+
+<!-- http://jsfiddle.net/mblase75/kz7d2/ -->
+<script>
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementsByName("completionDate")[0].setAttribute('min', today);
+</script>
