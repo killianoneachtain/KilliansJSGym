@@ -104,7 +104,7 @@ const trainerDashboard = {
 
         goalStore.addGoal(goal);
 
-        response.redirect("/dashboard");
+        response.redirect("/trainer");
     },
 
     viewAssessments(request, response)
@@ -165,6 +165,8 @@ const trainerDashboard = {
             missedGoals: missedGoals,
             achievedGoals : achievedGoals
         };
+
+        logger.info("Getting Assessments and Details for Member: " + loggedInUser.firstName);
 
         response.render("trainerMember", viewData);
     },
