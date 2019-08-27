@@ -109,8 +109,24 @@ const assessmentStore = {
       }
       return ( (order === 'desc') ?(comparison * -1) : comparison );
     };
-  }
+  },
 
+  returnLatestWeight(id)
+  {
+    const user = userStore.getUserById(id);
+
+    const assessments = assessmentStore.getUserAssessments(id);
+    const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
+
+    if (sortedAssessments.length === 0)
+    {
+      return user.startingWeight;
+    }
+    else
+    {
+      return sortedAssessments[0].weight;
+    }
+  }
 };
 
 module.exports = assessmentStore;

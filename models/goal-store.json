@@ -28,48 +28,12 @@
       "status": "Achieved"
     },
     {
-      "id": "9c0bfadc-1a01-48b7-b42b-febec52764da",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "Homer Jay Simpson",
-      "creationDate": "27-Aug-2019 00:42:28",
-      "completionDate": "2019-08-30",
-      "goalWeight": 65.26,
-      "status": "Open"
-    },
-    {
       "id": "5137317e-6269-47fc-ab68-bb372e51662d",
       "userId": "279e825d-600c-4cc5-b899-b32ee130f9a9",
       "createdBy": "Isobel O'Neachtain",
       "creationDate": "27-Aug-2019 01:38:21",
       "completionDate": "2019-08-30",
       "goalWeight": 65,
-      "status": "Open"
-    },
-    {
-      "id": "fa84e19e-493a-4fcd-aaf5-92b5ad95bc0d",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "Homer Jay Simpson",
-      "creationDate": "27-Aug-2019 02:56:06",
-      "completionDate": "2019-08-31",
-      "goalWeight": 94.26,
-      "status": "Open"
-    },
-    {
-      "id": "bdfc8c3f-c828-4e8c-b464-217b441b5a84",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "Homer Jay Simpson",
-      "creationDate": "27-Aug-2019 18:56:01",
-      "completionDate": "2019-09-10",
-      "goalWeight": 94.26,
-      "status": "Open"
-    },
-    {
-      "id": "4df9a3d2-fefd-434f-9998-6cff2626d810",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "Homer Jay Simpson",
-      "creationDate": "27-Aug-2019 18:56:22",
-      "completionDate": "2019-08-27",
-      "goalWeight": 84.26,
       "status": "Open"
     },
     {
@@ -113,24 +77,6 @@
       "status": "Open"
     },
     {
-      "id": "ccbcc621-2bf2-4ebd-97ac-9082c2dafa96",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "Lisa Simpson",
-      "creationDate": "27-Aug-2019 21:03:03",
-      "completionDate": "2019-10-11",
-      "goalWeight": 45,
-      "status": "Open"
-    },
-    {
-      "id": "26cc3172-97d7-4685-afd6-2c5982b56f18",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "Lisa Simpson",
-      "creationDate": "27-Aug-2019 21:03:44",
-      "completionDate": "2019-09-13",
-      "goalWeight": 65,
-      "status": "Open"
-    },
-    {
       "id": "ebe91afc-6259-4016-b964-7ad6025bb95f",
       "userId": "279e825d-600c-4cc5-b899-b32ee130f9a9",
       "createdBy": "Lisa Simpson",
@@ -155,6 +101,66 @@
       "creationDate": "27-Aug-2019 21:13:03",
       "completionDate": "2019-09-19",
       "goalWeight": 71.25,
+      "status": "Open"
+    },
+    {
+      "id": "715eebae-d6dd-45be-a12d-bd97b49fda38",
+      "userId": "c220ef48-10e8-4b0e-b0a7-33caab7e05bf",
+      "createdBy": "Mick Muscles",
+      "creationDate": "27-Aug-2019 22:57:29",
+      "creationWeight": 84.26,
+      "completionDate": "2019-09-13",
+      "goalWeight": 80.26,
+      "status": "Open"
+    },
+    {
+      "id": "1eddf0e9-bdd0-401b-b083-1e5f3d2e7757",
+      "userId": "c220ef48-10e8-4b0e-b0a7-33caab7e05bf",
+      "createdBy": "Lisa Simpson",
+      "creationDate": "27-Aug-2019 23:00:14",
+      "creationWeight": 84.26,
+      "completionDate": "2019-11-15",
+      "goalWeight": 74.09,
+      "status": "Open"
+    },
+    {
+      "id": "728aab15-9a82-457c-85ce-c92e6ae509ec",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Homer Jay Simpson",
+      "creationDate": "27-Aug-2019 23:07:37",
+      "creationWeight": 98.26,
+      "completionDate": "2019-10-18",
+      "goalWeight": 72.62,
+      "status": "Open"
+    },
+    {
+      "id": "ade73b37-415f-4e05-b942-388a94913c20",
+      "userId": "279e825d-600c-4cc5-b899-b32ee130f9a9",
+      "createdBy": "Isobel O'Neachtain",
+      "creationDate": "27-Aug-2019 23:09:59",
+      "creationWeight": 39.26,
+      "completionDate": "2019-09-13",
+      "goalWeight": 65,
+      "status": "Open"
+    },
+    {
+      "id": "dcad407a-6b6d-4596-874d-f3381a19ab49",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Homer Jay Simpson",
+      "creationDate": "27-Aug-2019 23:20:38",
+      "creationWeight": 98.26,
+      "completionDate": "2019-10-11",
+      "goalWeight": 100,
+      "status": "Open"
+    },
+    {
+      "id": "30bc3452-a3db-4bda-b408-4164c3646a7c",
+      "userId": "279e825d-600c-4cc5-b899-b32ee130f9a9",
+      "createdBy": "Isobel O'Neachtain",
+      "creationDate": "27-Aug-2019 23:22:29",
+      "creationWeight": 110,
+      "completionDate": "2019-08-30",
+      "goalWeight": 100,
       "status": "Open"
     }
   ]

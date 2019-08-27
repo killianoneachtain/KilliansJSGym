@@ -77,33 +77,12 @@ const trainerDashboard = {
 
     trainerAddGoal(request, response)
     {
-        /*
-        addComment(request,response)
-    {
-        logger.info("adding comment");
-        const assessment = assessmentStore.getAssessment(request.params.id);
-        assessment.comment = request.body.comment;
-        assessmentStore.saveAssessment();
-        const viewData = {
-            title: "Trainer Dashboard",
-            members: userStore.getAllUsers(),
-        };
-
-        response.redirect("/trainer");
-
-    },
-         */
         logger.info("Trainer is adding goal to user");
         const loggedInTrainer = accounts.getCurrentTrainer(request);
 
         logger.info("The Trainer is : " + loggedInTrainer.firstName);
 
         const memberID = request;
-        logger.info("MemberID from request is : " + memberID);
-        const viewingUser = userStore.getUserById(memberID);
-        logger.info("The user to add a goal to is : " + viewingUser);
-
-        logger.info("Trainer to add Goal is : " + loggedInTrainer);
 
         const now = Date(Date.now());
         const currentDate = now.toString();
@@ -118,11 +97,13 @@ const trainerDashboard = {
                 userId: request.params.id,
                 createdBy: addedBy,
                 creationDate: assessmentStore.formatDate(currentDate),
+                creationWeight: Number(assessmentStore.returnLatestWeight(request.params.id)),
                 completionDate: request.body.completionDate,
                 goalWeight: Number(request.body.goalWeight),
                 status: "Open"
             };
-        logger.info("Adding Goal");
+
+        logger.info("Adding Goal to user" + memberID);
 
         goalStore.addGoal(goal);
 

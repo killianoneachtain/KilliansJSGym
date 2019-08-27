@@ -1,17 +1,18 @@
-<section class="ui center aligned middle aligned segment">
+<section class="ui center aligned segment" style="background-color: lightgray">
 
-    <div class="ui column grid" style="font-family: helvetica; font-size: 130%;
-            text-transform: uppercase; font-weight: bold;background-color: lightgray">
+    <div class="ui column grid" style=" font-family: helvetica; font-size: 110%;
+            text-transform: uppercase; font-weight: bold">
         <div class="four column row" style="padding-bottom: 0%">
-            <div class="four wide column"><i class="big red crosshairs icon"></i></div>
-            <div class="four wide column">
-                <i class="big green calendar outline icon"></i></div>
-            <div class="four wide column"><i class="disabled big red calendar minus icon"></i></div>
-            <div class="three wide column"><i class="disabled big green calendar check icon"></i></div>
+            <div class="four wide column"><i class="big crosshairs icon" style="color: red"></i></div>
+            <div class="four wide column" style="padding-right: 15px">
+                <i class="big orange calendar outline icon"></i></div>
+            <div class="four wide column" style="padding-right: 61px"><i class="disabled big red calendar minus icon"></i></div>
+            <div class="three wide column" style="padding-right: 16px"><i class="disabled big green calendar check icon"></i></div>
 
         </div>
-        <div class="four column row" style="padding-top: 0%;">
-            <div class="four wide column"><h2>Goals</h2></div>
+        <div class="four column row" style="padding-top: 0%">
+            <div class="four wide column"><h2 style="font-size: 130%;padding-top: 2px;padding-right: 5px;
+            color: darkslategrey">Goals</h2></div>
             <div class="four wide column" style="padding-top: 4px">
                 {{> openGoals}}</div>
             <div class="four wide column" style="padding-top: 4px">{{> missedGoals}}</div>

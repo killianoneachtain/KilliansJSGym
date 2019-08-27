@@ -1,12 +1,14 @@
 <section class="ui raised segment">
     <h2 style="color: darkorange"><i class="orange play icon"></i>Current Open Goals : {{openGoals.length}}</h2>
-<table class="ui orange celled table">
+<table class="ui orange center aligned celled table">
     <thead>
     <tr>
-        <th>Creation Date</th>
-        <th>Created By</th>
-        <th>Weight to Achieve</th>
-        <th>Completion Date</th>
+        <th>Added On :</th>
+        <th>Added By :</th>
+        <th>Goal Start Weight:</th>
+        <th>Goal Weight :</th>
+        <th>Goal Date :</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -14,8 +16,11 @@
     <tr>
         <td>{{creationDate}}</td>
         <td>{{createdBy}}</td>
+        <td>{{creationWeight}}</td>
         <td>{{goalWeight}}</td>
         <td>{{completionDate}}</td>
+        <td><a href="/dashboard/deleteGoal/{{id}}" data-tooltip="Delete">
+            <i class="orange trash alternate outline icon"></i></a></td>
     </tr>
     {{/each}}
     </tbody>

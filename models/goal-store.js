@@ -85,10 +85,7 @@ const goalStore = {
     removeGoal(id)
     {
         const goal = this.getGoal(id);
-        const user = userStore.getUserById(goal.userId);
-        const goalCollection = goalStore.getUserGoals(user);
-        user.goals -= 1;
-        userStore.saveUser(user);
+        this.store.remove(this.collection, goal);
         this.store.save();
     },
 

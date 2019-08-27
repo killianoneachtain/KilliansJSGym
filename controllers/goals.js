@@ -89,6 +89,8 @@ const dashboard = {
         const addedByLast = loggedInUser.lastName;
         const addedBy = addedByFirst + " " + addedByLast;
 
+        logger.info("The loggedInUer.id is : " + loggedInUser.id);
+
 
         const goal =
             {
@@ -96,6 +98,7 @@ const dashboard = {
                 userId: loggedInUser.id,
                 createdBy: addedBy,
                 creationDate: assessmentStore.formatDate(currentDate),
+                creationWeight: Number(assessmentStore.returnLatestWeight(loggedInUser.id)),
                 completionDate: request.body.completionDate,
                 goalWeight: Number(request.body.goalWeight),
                 status: "Open"

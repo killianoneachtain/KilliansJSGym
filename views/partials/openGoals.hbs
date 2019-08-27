@@ -3,22 +3,26 @@
     <div class="text" style="padding-top: 2px"> {{openGoals.length}} Open<i class="small caret down icon"></i></div>
 <div class="menu">
     <div class="item">
-        <table class="ui striped celled table">
+        <table class="ui orange striped celled table">
             <thead>
             <tr>
-                <th>Creation Date</th>
-                <th>Completion Date</th>
-                <th>Weight to Achieve </th>
+                <th>Added By</th>
+                <th>Goal Date</th>
+                <th>Goal Weight</th>
                 <th>Status</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
             {{#each openGoals}}
                 <tr>
-                    <td>{{creationDate}}</td>
+                    <td>{{createdBy}}</td>
                     <td>{{completionDate}}</td>
                     <td>{{goalWeight}}</td>
                     <td>{{status}}</td>
+                    <td class="center aligned">
+                    <a href="/dashboard/deleteAssessment/{{id}}" data-tooltip="Delete">
+                    <i class="centered orange trash alternate outline icon"></i></a></td>
                 </tr>
             {{/each}}
             </tbody>
