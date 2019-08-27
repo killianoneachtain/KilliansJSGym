@@ -1,9 +1,9 @@
 <section class="ui center aligned middle aligned segment">
 
-    <div class="ui column grid" style=" font-family: helvetica; font-size: 130%;
-            text-transform: uppercase; font-weight: bold">
+    <div class="ui column grid" style="font-family: helvetica; font-size: 130%;
+            text-transform: uppercase; font-weight: bold;background-color: lightgray">
         <div class="four column row" style="padding-bottom: 0%">
-            <div class="four wide column"><i class="big chart bar icon"></i></div>
+            <div class="four wide column"><i class="big red crosshairs icon"></i></div>
             <div class="four wide column">
                 <i class="big green calendar outline icon"></i></div>
             <div class="four wide column"><i class="disabled big red calendar minus icon"></i></div>
@@ -21,7 +21,8 @@
 </section>
 
 <section class="ui raised segment" style="background-color: lightsteelblue">
-    <form class ="ui equal width form" action="/trainer/{{id}}/addGoal" method="POST">
+    <form class ="ui equal width form" action="/memberAssessments/{{currentMemberId}}/addGoal" method="POST">
+
         <div class="two fields">
             <div class="required field">
                 <label>Goal Date</label>
@@ -40,7 +41,8 @@
                 </div>
             </div>
         </div>
-        <button class="ui blue submit button">Add Goal</button>
+        <button class="ui orange submit button">Add Goal <i class="small corner add icon"></i>
+        </button>
         <i class="red asterisk icon"></i>Denotes required field<br>
     </form>
 </section>

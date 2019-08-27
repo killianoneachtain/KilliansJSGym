@@ -3,33 +3,6 @@
     {
       "id": "d5fa912c-24he-4288-ac65-3d595096f3a8",
       "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "creationDate": "21-Aug-2019 04:13:10",
-      "completionDate": "21-Sep-2019 23:59:59",
-      "goalWeight": 64.26,
-      "status": "Open"
-    },
-    {
-      "id": "d5fa912c-24he-4288-ac65-3d595096f3a8",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "creationDate": "21-Aug-2019 04:13:10",
-      "completionDate": "29-Aug-2019 23:59:59",
-      "goalWeight": 52.23,
-      "status": "Open"
-    },
-    {
-      "id": "d5fa912c-24he-4288-ac65-3d595096f3a8",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "2b6f0989-7b7f-4a38-ad26-aa06b922s751",
-      "creationDate": "23-Aug-2019 17:13:10",
-      "completionDate": "21-Sep-2019 23:59:59",
-      "goalWeight": 102.35,
-      "status": "Open"
-    },
-    {
-      "id": "d5fa912c-24he-4288-ac65-3d595096f3a8",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
       "createdBy": "2b6f0989-7b7f-4a38-ad26-aa06b922s751",
       "creationDate": "03-Aug-2019 17:13:10",
       "completionDate": "21-Aug-2019 23:59:59",
@@ -53,23 +26,6 @@
       "completionDate": "21-Aug-2019 13:29:09",
       "goalWeight": 82.35,
       "status": "Achieved"
-    },
-    {
-      "id": "ba4fe975-2528-4bf9-9953-979e02d221db",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "homer@simpson.com",
-      "creationDate": "27-Aug-2019 00:18:23",
-      "goalWeight": null,
-      "status": "Open"
-    },
-    {
-      "id": "00162cbd-08b4-489b-80da-670991573007",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "homer@simpson.com",
-      "creationDate": "27-Aug-2019 00:38:20",
-      "completionDate": "2019-08-29",
-      "goalWeight": 94.25,
-      "status": "Open"
     },
     {
       "id": "9c0bfadc-1a01-48b7-b42b-febec52764da",
@@ -96,6 +52,109 @@
       "creationDate": "27-Aug-2019 02:56:06",
       "completionDate": "2019-08-31",
       "goalWeight": 94.26,
+      "status": "Open"
+    },
+    {
+      "id": "bdfc8c3f-c828-4e8c-b464-217b441b5a84",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Homer Jay Simpson",
+      "creationDate": "27-Aug-2019 18:56:01",
+      "completionDate": "2019-09-10",
+      "goalWeight": 94.26,
+      "status": "Open"
+    },
+    {
+      "id": "4df9a3d2-fefd-434f-9998-6cff2626d810",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Homer Jay Simpson",
+      "creationDate": "27-Aug-2019 18:56:22",
+      "completionDate": "2019-08-27",
+      "goalWeight": 84.26,
+      "status": "Open"
+    },
+    {
+      "id": "0cfb862d-3c1b-4e16-b376-33130f723a81",
+      "createdBy": "Lisa Simpson",
+      "creationDate": "27-Aug-2019 19:46:28",
+      "completionDate": "2019-08-31",
+      "goalWeight": 64,
+      "status": "Open"
+    },
+    {
+      "id": "9da179ef-523a-418c-bde7-6cbdee56e491",
+      "createdBy": "Lisa Simpson",
+      "creationDate": "27-Aug-2019 20:26:09",
+      "completionDate": "2019-08-30",
+      "goalWeight": 48,
+      "status": "Open"
+    },
+    {
+      "id": "8b4567a5-07bd-403b-8f37-3d37975c16b3",
+      "createdBy": "Lisa Simpson",
+      "creationDate": "27-Aug-2019 20:30:18",
+      "completionDate": "2019-09-14",
+      "goalWeight": 75.26,
+      "status": "Open"
+    },
+    {
+      "id": "ca229502-1f77-4302-b4fc-cc5e8ef1f455",
+      "createdBy": "Lisa Simpson",
+      "creationDate": "27-Aug-2019 20:31:48",
+      "completionDate": "2019-10-10",
+      "goalWeight": 84,
+      "status": "Open"
+    },
+    {
+      "id": "63f0b63b-c332-44aa-b335-4f080d4089bb",
+      "createdBy": "Lisa Simpson",
+      "creationDate": "27-Aug-2019 20:38:25",
+      "completionDate": "2019-08-23",
+      "goalWeight": 47,
+      "status": "Open"
+    },
+    {
+      "id": "ccbcc621-2bf2-4ebd-97ac-9082c2dafa96",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Lisa Simpson",
+      "creationDate": "27-Aug-2019 21:03:03",
+      "completionDate": "2019-10-11",
+      "goalWeight": 45,
+      "status": "Open"
+    },
+    {
+      "id": "26cc3172-97d7-4685-afd6-2c5982b56f18",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Lisa Simpson",
+      "creationDate": "27-Aug-2019 21:03:44",
+      "completionDate": "2019-09-13",
+      "goalWeight": 65,
+      "status": "Open"
+    },
+    {
+      "id": "ebe91afc-6259-4016-b964-7ad6025bb95f",
+      "userId": "279e825d-600c-4cc5-b899-b32ee130f9a9",
+      "createdBy": "Lisa Simpson",
+      "creationDate": "27-Aug-2019 21:10:50",
+      "completionDate": "2019-09-13",
+      "goalWeight": 94.56,
+      "status": "Open"
+    },
+    {
+      "id": "9702ea5c-e672-4ecf-9df0-2ccd013d0846",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Lisa Simpson",
+      "creationDate": "27-Aug-2019 21:12:18",
+      "completionDate": "2019-11-08",
+      "goalWeight": 84.65,
+      "status": "Open"
+    },
+    {
+      "id": "5cb80a42-9f37-4f55-9982-5b78f0f8de80",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Bart Simpson",
+      "creationDate": "27-Aug-2019 21:13:03",
+      "completionDate": "2019-09-19",
+      "goalWeight": 71.25,
       "status": "Open"
     }
   ]

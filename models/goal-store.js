@@ -120,7 +120,14 @@ const goalStore = {
         let year = date.slice(11,15);
         let time = date.slice(16,24);
         return day + "-" + month + "-" + year + " " + time;
-    }
+    },
+
+    sortGoalsByDate(goals)
+    {
+        logger.info("sorting goals by date here");
+        return goals.sort(assessmentStore.compareValues('date','desc'));
+    },
+
 };
 
 module.exports = goalStore;

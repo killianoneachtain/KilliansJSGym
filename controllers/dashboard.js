@@ -19,6 +19,10 @@ const dashboard = {
     const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
 
     logger.info("Current User ID is : " + currentUser.id);
+
+    const allGoals = goalStore.getUserGoals(currentUser.id);
+    const sortedGoals = goalStore.sortGoalsByDate(allGoals);
+
     const openGoals = goalStore.getOpenGoals(currentUser.id);
     const missedGoals = goalStore.getMissedGoals(currentUser.id);
     const achievedGoals = goalStore.getAchievedGoals(currentUser.id);

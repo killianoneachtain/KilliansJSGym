@@ -30,11 +30,14 @@ router.get("/about", about.index);
 router.get("/memberGoals", goals.index);
 router.post("/dashboard/memberAddGoal", goals.memberAddGoal);
 
+
 router.get("/trainer", trainer.index);
 router.get("/memberAssessments/:id", trainer.viewAssessments);
+router.post("/memberAssessments/:id/addGoal", trainer.trainerAddGoal);
 router.post("/trainer/:id/addcomment",  trainer.addComment);
+
 router.get("/trainer/:id/deletemember", trainer.deleteMember);
-router.post("/trainer/:id/addGoal", trainer.trainerAddGoal);
+
 
 
 module.exports = router;

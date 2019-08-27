@@ -10,9 +10,9 @@
         <!-- chart code will be here -->
         // Set data
         var data = [
-            {x: "Open", value: {{openGoals.length}} },
+            {x: "Open", value: {{openGoals.length}}, exploded: true },
+            {x: "Achieved", value: {{achievedGoals.length}} },
             {x: "Missed", value: {{missedGoals.length}} },
-            {x: "Achieved", value: {{achievedGoals.length}}, exploded: true }
         ];
 
         var chart = anychart.pie();
@@ -26,8 +26,16 @@
         // display the chart in the container
         chart.container('container');
         chart.legend().position("right");
-        //chart.radius("100%");
-        chart.sort("asc");
+        chart.legend().fontSize(16);
+
+        // sets colour of each category to orange,green and red.
+        chart.palette(["#FFA500", "#008000","#FF0000"]);
+
+        // set the position of labels
+        chart.labels().position("outside");
+
+        // configure connectors
+        chart.connectorStroke({color: "#595959", thickness: 2, dash:"2 2"});
 
         chart.draw();
 
