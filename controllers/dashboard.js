@@ -6,6 +6,7 @@ const assessmentStore = require("../models/assessment-store");
 const userStore = require("../models/user-store");
 const goalStore = require("../models/goal-store");
 const analytics = require("../controllers/analytics");
+const goals = require("../controllers/goals");
 const uuid = require("uuid");
 
 const dashboard = {
@@ -15,6 +16,9 @@ const dashboard = {
 
     const assessments = assessmentStore.getUserAssessments(currentUser.id);
     const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
+
+    // goals.checkUserGoals(currentUser.id);
+
 
     const allGoals = goalStore.getUserGoals(currentUser.id);
     const sortedGoals = goalStore.sortGoalsByDate(allGoals);

@@ -211,7 +211,27 @@ const dashboard = {
     checkUserGoals(userId)
     {
         const allOpenGoals = goalStore.getOpenGoals(userId);
-        const sortedGoals = goalStore.sortGoalsByDate(allOpenGoals);
+        //const sortedGoals = goalStore.sortGoalsByDate(allOpenGoals);
+
+        const now = Date(Date.now());
+        const currentDate = now.toString();
+
+        logger.info("current date is : " + currentDate);
+
+        let i = 0;
+
+        for (i=0; i < allOpenGoals.length; i ++)
+        {
+            if (currentDate > allOpenGoals[i].completionDate)
+            {
+                allOpenGoals[i].status = "Missed";
+            }
+
+            if ((assessmentStore.returnLatestWeight(userId)) > allOpenGoals[i].goalWeight)
+            {
+                allOpenGoals[i].status = "Achieved";
+            }
+        }
     }
 
 };

@@ -29,13 +29,14 @@ const goalStore = {
     getOpenGoals(userId)
     {
         const allGoals = goalStore.getUserGoals(userId);
+        const sortedGoals = goalStore.sortGoalsByDate(allGoals);
         const openGoals = [];
         let i = 0;
-        for (i=0;i<allGoals.length;i++)
+        for (i=0;i<sortedGoals.length;i++)
         {
-            if (allGoals[i].status === "Open")
+            if (sortedGoals[i].status === "Open")
             {
-               openGoals.push(allGoals[i]);
+               openGoals.push(sortedGoals[i]);
             }
         }
         return openGoals;
@@ -44,13 +45,14 @@ const goalStore = {
     getMissedGoals(userId)
     {
         const allGoals = goalStore.getUserGoals(userId);
+        const sortedGoals = goalStore.sortGoalsByDate(allGoals);
         const missedGoals = [];
         let i = 0;
-        for (i=0;i<allGoals.length;i++)
+        for (i=0;i<sortedGoals.length;i++)
         {
-            if (allGoals[i].status === "Missed")
+            if (sortedGoals[i].status === "Missed")
             {
-                missedGoals.push(allGoals[i]);
+                missedGoals.push(sortedGoals[i]);
             }
         }
         return missedGoals;
@@ -60,13 +62,16 @@ const goalStore = {
     getAchievedGoals(userId)
     {
         const allGoals = goalStore.getUserGoals(userId);
+        const sortedGoals = goalStore.sortGoalsByDate(allGoals);
+
         const achievedGoals = [];
         let i = 0;
-        for (i=0;i<allGoals.length;i++)
+
+        for (i=0;i<sortedGoals.length;i++)
         {
-            if (allGoals[i].status === "Achieved")
+            if (sortedGoals[i].status === "Achieved")
             {
-                achievedGoals.push(allGoals[i]);
+                achievedGoals.push(sortedGoals[i]);
             }
         }
         return achievedGoals;
@@ -75,7 +80,6 @@ const goalStore = {
 
     addGoal(goal)
     {
-
         this.store.add(this.collection, goal);
         this.store.save();
     },
@@ -122,8 +126,47 @@ const goalStore = {
     sortGoalsByDate(goals)
     {
         logger.info("sorting goals by date here");
-        return goals.sort(assessmentStore.compareValues('date','desc'));
+
+        let i = 0;
+        let completionDates = [];
+
+        for (i=0;i<goals.length;i++)
+        {
+            let dateParts = goals[i].completionDate.split("-");
+
+            let dateMonth = goalStore.monthNameToNumber(dateParts[1]);
+
+            let formattedDate = new Date(+dateParts[0], dateMonth, +dateParts[2]);
+
+            completionDates.push(formattedDate);
+
+            //logger.info("Date Object conversion is : " + completionDates[i]);
+        }
+
+
+
+        return goals.sort(assessmentStore.compareValues('dateObject','desc'));
     },
+
+    monthNameToNumber(month)
+    {
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"  ];
+
+        let i = 0;
+        let monthNumber = 0;
+
+        for(i=0;i<monthNames.length;i++)
+        {
+            if (month === monthNames[i])
+            {
+                monthNumber = i;
+            }
+        }
+
+
+        return monthNumber;
+    }
 
 };
 

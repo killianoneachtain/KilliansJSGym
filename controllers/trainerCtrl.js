@@ -92,6 +92,8 @@ const trainerDashboard = {
         const addedByLast = loggedInTrainer.lastName;
         const addedBy = addedByFirst + " " + addedByLast;
 
+        const goalDate = goals.formatGoalCompletionDate(request.body.completionDate);
+
         const goal =
             {
                 id: uuid(),
@@ -99,7 +101,7 @@ const trainerDashboard = {
                 createdBy: addedBy,
                 creationDate: goals.formatGoalCreationDate(currentDate),
                 creationWeight: Number(assessmentStore.returnLatestWeight(request.params.id)),
-                completionDate: request.body.completionDate,
+                completionDate: goalDate,
                 goalWeight: Number(request.body.goalWeight),
                 status: "Open"
             };
@@ -116,6 +118,8 @@ const trainerDashboard = {
         logger.info("trainer/member rendering");
         const memberID = request.params.id;
         const loggedInUser = userStore.getUserById(memberID);
+
+        //goals.checkUserGoals(memberID);
 
         const assessments = assessmentStore.getUserAssessments(memberID);
         const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
