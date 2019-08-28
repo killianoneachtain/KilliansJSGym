@@ -38,7 +38,7 @@
       "creationWeight": 113.01,
       "completionDate": "13-Sep-2019",
       "goalWeight": 84.26,
-      "status": "Open"
+      "status": "Achieved"
     },
     {
       "id": "75b3755a-d776-4661-ac0f-12ee255a691a",
@@ -48,7 +48,7 @@
       "creationWeight": 113.01,
       "completionDate": "18-Oct-2019",
       "goalWeight": 94,
-      "status": "Open"
+      "status": "Achieved"
     },
     {
       "id": "de28ef01-00d8-4f2b-a444-6aac19c1c97f",
@@ -58,7 +58,7 @@
       "creationWeight": 85.22,
       "completionDate": "29-Nov-2019",
       "goalWeight": 84.26,
-      "status": "Open"
+      "status": "Achieved"
     },
     {
       "id": "d06cf150-f442-4904-9e75-5e018c6a9e1f",
@@ -68,7 +68,7 @@
       "creationWeight": 85.22,
       "completionDate": "28-Aug-2019",
       "goalWeight": 84,
-      "status": "Open"
+      "status": "Achieved"
     },
     {
       "id": "98bc478b-1f53-4221-b752-223a5cc7917f",
@@ -108,7 +108,7 @@
       "creationWeight": 83.25,
       "completionDate": "28-Aug-2019",
       "goalWeight": 84.26,
-      "status": "Open"
+      "status": "Achieved"
     },
     {
       "id": "1fa5e8fb-e71e-451e-911b-07897cceabd7",
@@ -118,7 +118,7 @@
       "creationWeight": 83.25,
       "completionDate": "08-Nov-2019",
       "goalWeight": 84,
-      "status": "Open"
+      "status": "Achieved"
     },
     {
       "id": "af10d9eb-2bbf-4992-b50c-df6696570a13",
@@ -138,7 +138,7 @@
       "creationWeight": 94.25,
       "completionDate": "08-Aug-2019",
       "goalWeight": 84,
-      "status": "Open"
+      "status": "Achieved"
     },
     {
       "id": "31afe448-aca0-475c-84c1-f4ac6075911b",
@@ -149,6 +149,78 @@
       "completionDate": "28-Aug-2019",
       "goalWeight": 112.23,
       "status": "Open"
+    },
+    {
+      "id": "6e1616bf-2acb-4965-ba9b-5a4d15eb60a7",
+      "userId": "c220ef48-10e8-4b0e-b0a7-33caab7e05bf",
+      "createdBy": "Mick Muscles",
+      "creationDate": "28-Aug-2019",
+      "creationWeight": 84.26,
+      "completionDate": "28-Aug-2019",
+      "goalWeight": 85,
+      "status": "Achieved"
+    },
+    {
+      "id": "547ba10d-1256-4902-b74f-4832caca269b",
+      "userId": "c220ef48-10e8-4b0e-b0a7-33caab7e05bf",
+      "createdBy": "Mick Muscles",
+      "creationDate": "28-Aug-2019",
+      "creationWeight": 84.26,
+      "completionDate": "Wed Aug 28 2019 23:59:33 GMT+0100 (Irish Standard Time)",
+      "goalWeight": 84.27,
+      "status": "Achieved"
+    },
+    {
+      "id": "da37df9e-b931-4829-8e74-88f12d29664d",
+      "userId": "c220ef48-10e8-4b0e-b0a7-33caab7e05bf",
+      "createdBy": "Mick Muscles",
+      "creationDate": "29-Aug-2019",
+      "creationWeight": 84.26,
+      "completionDate": "Thu Aug 29 2019 00:00:36 GMT+0100 (Irish Standard Time)",
+      "goalWeight": 89,
+      "status": "Achieved"
+    },
+    {
+      "id": "d0b579ce-a7d0-49c7-b3c7-73e3a5f3414c",
+      "userId": "c220ef48-10e8-4b0e-b0a7-33caab7e05bf",
+      "createdBy": "Mick Muscles",
+      "creationDate": "29-Aug-2019",
+      "creationWeight": 84.26,
+      "completionDate": "Thu Aug 29 2019 00:01:01 GMT+0100 (Irish Standard Time)",
+      "goalWeight": 92,
+      "status": "Achieved"
+    },
+    {
+      "id": "19738f50-3e30-41ac-bb38-f71c3ebaec3c",
+      "userId": "c220ef48-10e8-4b0e-b0a7-33caab7e05bf",
+      "createdBy": "Mick Muscles",
+      "creationDate": "29-Aug-2019",
+      "creationWeight": 84.26,
+      "completionDate": "29-Aug-2019",
+      "goalWeight": 82,
+      "status": "Open"
+    },
+    {
+      "id": "24425f07-be45-4219-874c-b9f871efa9b7",
+      "userId": "c220ef48-10e8-4b0e-b0a7-33caab7e05bf",
+      "createdBy": "Mick Muscles",
+      "creationDate": "29-Aug-2019",
+      "creationWeight": 84.26,
+      "completionDate": "29-Aug-2019",
+      "goalWeight": 85,
+      "goalAchievementDate": "29-Aug-2019 00:06:30",
+      "status": "Achieved"
+    },
+    {
+      "id": "2aa2a7e1-d86f-4972-b70a-845c4d450a2f",
+      "userId": "c220ef48-10e8-4b0e-b0a7-33caab7e05bf",
+      "createdBy": "Mick Muscles",
+      "creationDate": "29-Aug-2019",
+      "creationWeight": 84.26,
+      "completionDate": "29-Aug-2019",
+      "goalWeight": 87.26,
+      "goalAchievementDate": "29-Aug-2019 00:06:30",
+      "status": "Achieved"
     }
   ]
 }

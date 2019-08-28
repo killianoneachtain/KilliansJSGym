@@ -109,7 +109,7 @@ const goalStore = {
         this.store.save();
     },
 
-    saveGoal()
+    saveGoals()
     {
         this.store.save();
     },

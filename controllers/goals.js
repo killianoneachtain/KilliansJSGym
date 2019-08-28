@@ -99,6 +99,7 @@ const dashboard = {
                 creationWeight: Number(assessmentStore.returnLatestWeight(loggedInUser.id)),
                 completionDate: goalDate,
                 goalWeight: Number(request.body.goalWeight),
+                goalAchievementDate: "",
                 status: "Open"
             };
 
@@ -219,8 +220,12 @@ const dashboard = {
             if((currentWeight < allOpenGoals[i].goalWeight) && ((currentDate > allOpenGoals[i].completionDate)))
             {
                 allOpenGoals[i].status = "Achieved";
+                allOpenGoals[i].goalAchievementDate = assessmentStore.formatDate(currentDate);
+                goalStore.saveGoals();
             }
         }
+
+
     }
 
 };
