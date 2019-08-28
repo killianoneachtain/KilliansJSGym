@@ -119,7 +119,7 @@ const trainerDashboard = {
         const memberID = request.params.id;
         const loggedInUser = userStore.getUserById(memberID);
 
-        //goals.checkUserGoals(memberID);
+        goals.checkUserGoals(memberID);
 
         const assessments = assessmentStore.getUserAssessments(memberID);
         const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
