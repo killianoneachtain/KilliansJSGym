@@ -125,7 +125,7 @@ const goalStore = {
 
     sortGoalsByDate(goals)
     {
-        logger.info("sorting goals by date here");
+
 
         let i = 0;
         let completionDates = [];

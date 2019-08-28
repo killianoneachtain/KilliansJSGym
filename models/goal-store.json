@@ -38,7 +38,7 @@
       "creationWeight": 113.01,
       "completionDate": "13-Sep-2019",
       "goalWeight": 84.26,
-      "status": "Achieved"
+      "status": "Open"
     },
     {
       "id": "75b3755a-d776-4661-ac0f-12ee255a691a",
@@ -58,7 +58,7 @@
       "creationWeight": 85.22,
       "completionDate": "29-Nov-2019",
       "goalWeight": 84.26,
-      "status": "Achieved"
+      "status": "Open"
     },
     {
       "id": "d06cf150-f442-4904-9e75-5e018c6a9e1f",
@@ -78,6 +78,66 @@
       "creationWeight": 83.25,
       "completionDate": "15-Nov-2019",
       "goalWeight": 72.36,
+      "status": "Open"
+    },
+    {
+      "id": "379c28b2-243e-4e3e-ae31-12141ab87885",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Homer Jay Simpson",
+      "creationDate": "28-Aug-2019",
+      "creationWeight": 83.25,
+      "completionDate": "31-Aug-2019",
+      "goalWeight": 71.25,
+      "status": "Open"
+    },
+    {
+      "id": "19bad6d9-c47f-47b4-a44b-45ed662e9705",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Homer Jay Simpson",
+      "creationDate": "28-Aug-2019",
+      "creationWeight": 83.25,
+      "completionDate": "10-Jan-2020",
+      "goalWeight": 74.26,
+      "status": "Open"
+    },
+    {
+      "id": "215098a3-142d-415b-ad0f-acf1ef130685",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Homer Jay Simpson",
+      "creationDate": "28-Aug-2019",
+      "creationWeight": 83.25,
+      "completionDate": "28-Aug-2019",
+      "goalWeight": 84.26,
+      "status": "Open"
+    },
+    {
+      "id": "1fa5e8fb-e71e-451e-911b-07897cceabd7",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Homer Jay Simpson",
+      "creationDate": "28-Aug-2019",
+      "creationWeight": 83.25,
+      "completionDate": "08-Nov-2019",
+      "goalWeight": 84,
+      "status": "Open"
+    },
+    {
+      "id": "af10d9eb-2bbf-4992-b50c-df6696570a13",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Homer Jay Simpson",
+      "creationDate": "28-Aug-2019",
+      "creationWeight": 83.25,
+      "completionDate": "08-Nov-2019",
+      "goalWeight": 81,
+      "status": "Open"
+    },
+    {
+      "id": "1fa5e8fb-e71e-451e-911b-07897cceabd7",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Homer Jay Simpson",
+      "creationDate": "28-Aug-2019",
+      "creationWeight": 94.25,
+      "completionDate": "08-Aug-2019",
+      "goalWeight": 84,
       "status": "Open"
     }
   ]

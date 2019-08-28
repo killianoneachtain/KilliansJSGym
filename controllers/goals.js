@@ -12,20 +12,19 @@ const goals = require("../controllers/goals.js");
 
 const dashboard = {
     index(request, response) {
-        logger.info("dashboard rendering");
+
         const currentUser = accounts.getCurrentUser(request);
-        logger.info("dashboard current user is ");
+
         logger.info(currentUser);
 
         const assessments = assessmentStore.getUserAssessments(currentUser.id);
         const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
-        logger.info("Current User ID is : " + currentUser.id);
 
         const openGoals = goalStore.getOpenGoals(currentUser.id);
         const missedGoals = goalStore.getMissedGoals(currentUser.id);
         const achievedGoals = goalStore.getAchievedGoals(currentUser.id);
 
-        logger.info("Goals are : " + openGoals);
+
 
         let currentWeight = 0;
         let latestAssessment = sortedAssessments[0];
@@ -46,12 +45,12 @@ const dashboard = {
                 trend: " "
             };
             currentWeight = currentUser.startingWeight;
-            logger.info("Weight is starting weight");
+
         }
         else
         {
             currentWeight = latestAssessment.weight;
-            logger.info("Weight is latest weight");
+
         }
 
 
@@ -73,14 +72,12 @@ const dashboard = {
             missedGoals: missedGoals,
             achievedGoals : achievedGoals
         };
-        logger.info("about to render");
+
         response.render("memberGoals", viewData);
     },
 
     memberAddGoal(request, response) {
         const loggedInUser = accounts.getCurrentUser(request);
-
-        logger.info("Member to add Goal to is " + loggedInUser);
 
         const now = Date(Date.now());
         const currentDate = now.toString();
@@ -93,8 +90,6 @@ const dashboard = {
 
         const goalDate = dashboard.formatGoalCompletionDate(request.body.completionDate);
 
-        logger.info("The loggedInUer.id is : " + loggedInUser.id);
-
         const goal =
             {
                 id: uuid(),
@@ -106,7 +101,7 @@ const dashboard = {
                 goalWeight: Number(request.body.goalWeight),
                 status: "Open"
             };
-        logger.info("Adding Goal" + goal);
+
 
         goalStore.addGoal(goal);
 
@@ -122,13 +117,13 @@ const dashboard = {
             title: "Member Profile",
             user: currentUser
         };
-        logger.info("about to render");
+
         response.render("profile", viewData);
     },
 
     editProfile(request, response)
     {
-        logger.info("Editing User Profile ");
+
         const loggedInUser = accounts.getCurrentUser(request);
 
         const viewData = {
@@ -140,7 +135,6 @@ const dashboard = {
 
     saveProfile(request,response)
     {
-        logger.info("Saving User Profile");
         const loggedInUser = accounts.getCurrentUser(request);
 
         loggedInUser.firstName = request.body.firstName;
@@ -153,19 +147,18 @@ const dashboard = {
         loggedInUser.startingWeight = Number(request.body.startingWeight);
 
         userStore.saveUser();
-        logger.info(`saving editted user profile ${loggedInUser.email}`);
+
 
         const viewData = {
             title: "Member Profile",
             user: loggedInUser
         };
-        logger.info("about to render profile");
         response.render("profile", viewData);
     },
 
     genderColour(user)
     {
-        logger.info("In genderColour function using: " + user.firstName);
+
 
         if (user.gender === "male")
         {
@@ -216,18 +209,14 @@ const dashboard = {
         const now = Date(Date.now());
         const currentDate = now.toString();
 
-        logger.info("current date is : " + currentDate);
+        const currentWeight = assessmentStore.returnLatestWeight(userId);
+        logger.info("Check User Goals Current Weight is : " + currentWeight);
 
         let i = 0;
 
-        for (i=0; i < allOpenGoals.length; i ++)
+        for (i=0;i<allOpenGoals.length;i++)
         {
-            if (currentDate > allOpenGoals[i].completionDate)
-            {
-                allOpenGoals[i].status = "Missed";
-            }
-
-            if ((assessmentStore.returnLatestWeight(userId)) > allOpenGoals[i].goalWeight)
+            if((currentWeight < allOpenGoals[i].goalWeight) && ((currentDate > allOpenGoals[i].completionDate)))
             {
                 allOpenGoals[i].status = "Achieved";
             }

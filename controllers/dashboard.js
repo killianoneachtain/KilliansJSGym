@@ -17,11 +17,11 @@ const dashboard = {
     const assessments = assessmentStore.getUserAssessments(currentUser.id);
     const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
 
-    // goals.checkUserGoals(currentUser.id);
+    goals.checkUserGoals(currentUser.id);
 
 
     const allGoals = goalStore.getUserGoals(currentUser.id);
-    const sortedGoals = goalStore.sortGoalsByDate(allGoals);
+    //const sortedGoals = goalStore.sortGoalsByDate(allGoals);
 
     const openGoals = goalStore.getOpenGoals(currentUser.id);
     const missedGoals = goalStore.getMissedGoals(currentUser.id);
