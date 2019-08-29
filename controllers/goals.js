@@ -20,6 +20,8 @@ const dashboard = {
         const assessments = assessmentStore.getUserAssessments(currentUser.id);
         const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
 
+        dashboard.checkUserGoals(currentUser.id);
+
         const openGoals = goalStore.getOpenGoals(currentUser.id);
         const missedGoals = goalStore.getMissedGoals(currentUser.id);
         const achievedGoals = goalStore.getAchievedGoals(currentUser.id);
@@ -70,10 +72,48 @@ const dashboard = {
             userIconColour: dashboard.genderColour(currentUser),
             openGoals: openGoals,
             missedGoals: missedGoals,
-            achievedGoals : achievedGoals
+            achievedGoals : achievedGoals,
+            upperGoalWeight: dashboard.maxGoalWeight(analytics.idealBodyWeight(latestAssessment),currentUser.id),
+            lowerGoalWeight: dashboard.minGoalWeight(analytics.idealBodyWeight(latestAssessment),currentUser.id)
         };
 
         response.render("memberGoals", viewData);
+    },
+
+    maxGoalWeight(weight, userId)
+    {
+        logger.info("For Max weight, Ideal weight is : " + weight);
+        let idealWeight = Number(weight);
+        const x = 20;
+        let upperLimit = x + idealWeight;
+
+        logger.info("For Max weight, Upper weight is : " + upperLimit);
+
+        let currentWeight = assessmentStore.returnLatestWeight(userId);
+        if (currentWeight > upperLimit)
+        {
+            upperLimit = currentWeight;
+            logger.info("For Max weight, Upper weight is : (currentWeight)" + upperLimit);
+        }
+        return upperLimit;
+    },
+
+    minGoalWeight(weight, userId)
+    {
+        logger.info("For Min weight, Ideal weight is : " + weight);
+        let idealWeight = Number(weight);
+        const x = -20;
+        let lowerLimit = x + idealWeight;
+
+        logger.info("For Min weight, Lower weight is : " + lowerLimit);
+
+        let currentWeight = assessmentStore.returnLatestWeight(userId).toFixed(2);
+        if (currentWeight < lowerLimit)
+        {
+            lowerLimit = currentWeight;
+            logger.info("For Min weight, Lower weight is : (currentWeight)" + lowerLimit);
+        }
+        return lowerLimit;
     },
 
     memberAddGoal(request, response) {
