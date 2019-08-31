@@ -78,10 +78,7 @@ const trainerDashboard = {
 
     trainerAddGoal(request, response)
     {
-        logger.info("Trainer is adding goal to user");
         const loggedInTrainer = accounts.getCurrentTrainer(request);
-
-        logger.info("The Trainer is : " + loggedInTrainer.firstName);
 
         const memberID = request;
 
@@ -92,16 +89,28 @@ const trainerDashboard = {
         const addedByLast = loggedInTrainer.lastName;
         const addedBy = addedByFirst + " " + addedByLast;
 
-        const goalDate = goals.formatGoalCompletionDate(request.body.completionDate);
+        const goalDate = request.body.completionDate;
+        logger.info("Inputted Goal Date is : " + goalDate);
+        let year = goalDate.substring(0,4);
+        logger.info("Inputted Year is : " + year);
+        let month = goalDate.substring(5,7);
+        month = month -1;
+        logger.info("Inputted month Date is : " + month);
+        let day = goalDate.substring(8,10);
+        logger.info("goalDate day is : " + day);
+        const goalCompletionDate = new Date(year, month, day, 23, 59, 59, 59);
+        let goalExpiryDate = goalCompletionDate.toString();
+        logger.info("In AddingGoal, Goal Completion Date is : " + goalCompletionDate);
 
         const goal =
             {
                 id: uuid(),
                 userId: request.params.id,
                 createdBy: addedBy,
-                creationDate: goals.formatGoalCreationDate(currentDate),
+                creationDate: currentDate,
+                weightDecision: request.body.weightChoice,
                 creationWeight: Number(assessmentStore.returnLatestWeight(request.params.id)),
-                completionDate: goalDate,
+                completionDate: goalExpiryDate,
                 goalWeight: Number(request.body.goalWeight),
                 status: "Open"
             };
@@ -110,7 +119,7 @@ const trainerDashboard = {
 
         goalStore.addGoal(goal);
 
-        response.redirect("/trainer");
+        response.redirect("/memberAssessments/" + request.params.id);
     },
 
     viewAssessments(request, response)
@@ -172,7 +181,9 @@ const trainerDashboard = {
             userIconColour: dashboard.genderColour(loggedInUser),
             openGoals: openGoals,
             missedGoals: missedGoals,
-            achievedGoals : achievedGoals
+            achievedGoals : achievedGoals,
+            upperGoalWeight: goals.maxGoalWeight(analytics.idealBodyWeight(latestAssessment),loggedInUser.id),
+            lowerGoalWeight: goals.minGoalWeight(analytics.idealBodyWeight(latestAssessment),loggedInUser.id)
         };
 
         logger.info("Getting Assessments and Details for Member: " + loggedInUser.firstName);
@@ -185,14 +196,15 @@ const trainerDashboard = {
         logger.info("adding comment");
         const assessment = assessmentStore.getAssessment(request.params.id);
         assessment.comment = request.body.comment;
+        const userId = assessment.userId;
         assessmentStore.saveAssessment();
         const viewData = {
             title: "Trainer Dashboard",
             members: userStore.getAllUsers(),
         };
+        logger.info("The userId is : " + userId);
 
-        response.redirect("/trainer");
-
+        response.redirect("/memberAssessments/" + userId);
     },
 
     deleteMember(request, response)

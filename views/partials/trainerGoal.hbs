@@ -24,7 +24,24 @@
 <section class="ui raised segment" style="background-color: lightsteelblue">
     <form class ="ui equal width form" action="/memberAssessments/{{currentMemberId}}/addGoal" method="POST">
 
-        <div class="two fields">
+        <div class="three fields">
+
+            <div class="required field">
+                <label>Lose / Gain Weight</label>
+                <div class="ui selection dropdown">
+                    <input type="hidden" name="weightChoice">
+                        <i class="dropdown icon"></i>
+                    <div class="default text">Lose / Gain Weight </div>
+                    <div class="menu">
+                        <div class="item" data-value="Lose">Lose</div>
+                        <div class="item" data-value="Gain">Gain</div>
+                    </div>
+                </div>
+            </div>
+                <script>$('.ui.dropdown')
+                        .dropdown()
+                ;</script>
+
             <div class="required field">
                 <label>Goal Date</label>
                 <div class="ui right labeled input">
@@ -35,7 +52,8 @@
             <div class="required field">
                 <label>Weight to Achieve</label>
                 <div class="ui right labeled input">
-                    <input placeholder="00.00" type="number" step="0.01" min="30.0" max="250.0" name="goalWeight" required>
+                    <input placeholder="00.00" type="number" step="0.01" min="{{lowerGoalWeight}}"
+                           max="{{upperGoalWeight}}" name="goalWeight" required>
                     <div class="ui basic label">
                         kg
                     </div>
@@ -44,7 +62,7 @@
         </div>
         <button class="ui orange submit button">Add Goal <i class="small corner add icon"></i>
         </button>
-        <i class="red asterisk icon"></i>Denotes required field<br>
+            <i class="red asterisk icon"></i>Denotes required field<br>
     </form>
 </section>
 

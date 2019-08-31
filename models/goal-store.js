@@ -125,27 +125,7 @@ const goalStore = {
 
     sortGoalsByDate(goals)
     {
-
-
-        let i = 0;
-        let completionDates = [];
-
-        for (i=0;i<goals.length;i++)
-        {
-            let dateParts = goals[i].completionDate.split("-");
-
-            let dateMonth = goalStore.monthNameToNumber(dateParts[1]);
-
-            let formattedDate = new Date(+dateParts[0], dateMonth, +dateParts[2]);
-
-            completionDates.push(formattedDate);
-
-            //logger.info("Date Object conversion is : " + completionDates[i]);
-        }
-
-
-
-        return goals.sort(assessmentStore.compareValues('dateObject','desc'));
+        return goals.sort(assessmentStore.compareValues('completionDate','desc'));
     },
 
     monthNameToNumber(month)

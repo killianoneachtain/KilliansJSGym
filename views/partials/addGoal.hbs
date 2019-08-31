@@ -1,6 +1,23 @@
 <section class="ui raised segment" style="background-color: lightsteelblue">
 <form class ="ui equal width form" action="/dashboard/memberAddGoal" method="POST">
-    <div class="two fields">
+    <div class="three fields">
+        <div class="required field">
+            <label>Lose / Gain Weight</label>
+            <div class="ui selection dropdown">
+                <input type="hidden" name="weightChoice">
+                <i class="dropdown icon"></i>
+                <div class="default text">Lose / Gain Weight </div>
+                <div class="menu">
+                    <div class="item" data-value="Lose">Lose</div>
+                    <div class="item" data-value="Gain">Gain</div>
+                </div>
+            </div>
+
+            <script>$('.ui.dropdown')
+                    .dropdown()
+            ;</script>
+        </div>
+
         <div class="required field">
             <label>Goal Date</label>
             <div class="ui right labeled input">

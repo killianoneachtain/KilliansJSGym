@@ -6,16 +6,14 @@ const assessmentStore = require("../models/assessment-store");
 const userStore = require("../models/user-store");
 const goalStore = require("../models/goal-store");
 const analytics = require("../controllers/analytics");
-const trainerStore = require("../models/trainer-store");
+
 const uuid = require("uuid");
-const goals = require("../controllers/goals.js");
+
 
 const dashboard = {
     index(request, response) {
 
         const currentUser = accounts.getCurrentUser(request);
-
-        logger.info(currentUser);
 
         const assessments = assessmentStore.getUserAssessments(currentUser.id);
         const sortedAssessments = assessmentStore.sortAssessmentsByDate(assessments);
@@ -25,8 +23,6 @@ const dashboard = {
         const openGoals = goalStore.getOpenGoals(currentUser.id);
         const missedGoals = goalStore.getMissedGoals(currentUser.id);
         const achievedGoals = goalStore.getAchievedGoals(currentUser.id);
-
-
 
         let currentWeight = 0;
         let latestAssessment = sortedAssessments[0];
@@ -82,36 +78,31 @@ const dashboard = {
 
     maxGoalWeight(weight, userId)
     {
-        logger.info("For Max weight, Ideal weight is : " + weight);
+
         let idealWeight = Number(weight);
         const x = 20;
         let upperLimit = x + idealWeight;
-
-        logger.info("For Max weight, Upper weight is : " + upperLimit);
 
         let currentWeight = assessmentStore.returnLatestWeight(userId);
         if (currentWeight > upperLimit)
         {
             upperLimit = currentWeight;
-            logger.info("For Max weight, Upper weight is : (currentWeight)" + upperLimit);
+
         }
         return upperLimit;
     },
 
     minGoalWeight(weight, userId)
     {
-        logger.info("For Min weight, Ideal weight is : " + weight);
+
         let idealWeight = Number(weight);
         const x = -20;
         let lowerLimit = x + idealWeight;
-
-        logger.info("For Min weight, Lower weight is : " + lowerLimit);
 
         let currentWeight = assessmentStore.returnLatestWeight(userId).toFixed(2);
         if (currentWeight < lowerLimit)
         {
             lowerLimit = currentWeight;
-            logger.info("For Min weight, Lower weight is : (currentWeight)" + lowerLimit);
         }
         return lowerLimit;
     },
@@ -126,18 +117,31 @@ const dashboard = {
         const addedByLast = loggedInUser.lastName;
         const addedBy = addedByFirst + " " + addedByLast;
 
-        const creationDate = dashboard.formatGoalCreationDate(currentDate);
+        //const creationDate = dashboard.formatGoalCreationDate(currentDate);
 
-        const goalDate = dashboard.formatGoalCompletionDate(request.body.completionDate);
+        const goalDate = request.body.completionDate;
+        logger.info("Inputted Goal Date is : " + goalDate);
+        let year = goalDate.substring(0,4);
+        logger.info("Inputted Year is : " + year);
+        let month = goalDate.substring(5,7);
+        month = month -1;
+        logger.info("Inputted month Date is : " + month);
+        let day = goalDate.substring(8,10);
+        logger.info("goalDate day is : " + day);
+        const goalCompletionDate = new Date(year, month, day, 23, 59, 59, 59);
+        let goalExpiryDate = goalCompletionDate.toString();
+        logger.info("In AddingGoal, Goal Completion Date is : " + goalCompletionDate);
+
 
         const goal =
             {
                 id: uuid(),
                 userId: loggedInUser.id,
                 createdBy: addedBy,
-                creationDate: creationDate,
+                creationDate: currentDate,
+                weightDecision: request.body.weightChoice,
                 creationWeight: Number(assessmentStore.returnLatestWeight(loggedInUser.id)),
-                completionDate: goalDate,
+                completionDate: goalExpiryDate,
                 goalWeight: Number(request.body.goalWeight),
                 goalAchievementDate: "",
                 status: "Open"
@@ -213,35 +217,6 @@ const dashboard = {
         }
     },
 
-    formatGoalCreationDate(date)
-    {
-        let day = date.slice(8,10);
-        let month = date.slice(4,7);
-        let year = date.slice(11,15);
-
-        return day + "-" + month + "-" + year;
-    },
-
-    formatGoalCompletionDate(date)
-    {
-        let year = date.slice(0,4);
-        let month = date.slice(5,7);
-        let monthName = dashboard.monthName(month);
-        let day = date.slice(8,10);
-
-        return day + "-" + monthName + "-" + year;
-    },
-
-    monthName(monthNumber)
-    {
-        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"  ];
-
-        let month = monthNumber - 1;
-
-        return monthNames[month];
-    },
-
     checkUserGoals(userId)
     {
         const allOpenGoals = goalStore.getOpenGoals(userId);
@@ -250,19 +225,37 @@ const dashboard = {
         const now = Date(Date.now());
         const currentDate = now.toString();
 
+
         const currentWeight = assessmentStore.returnLatestWeight(userId);
-        logger.info("Check User Goals Current Weight is : " + currentWeight);
 
         let i = 0;
 
         for (i=0;i<allOpenGoals.length;i++)
         {
+
+            let startWeightDifference = Math.abs( allOpenGoals[i].goalWeight - allOpenGoals[i].creationWeight);
+            let currentWeightDifference = Math.abs(currentWeight - allOpenGoals[i].creationWeight);
+
             if((currentWeight < allOpenGoals[i].goalWeight) && ((currentDate > allOpenGoals[i].completionDate)))
             {
                 allOpenGoals[i].status = "Achieved";
                 allOpenGoals[i].goalAchievementDate = assessmentStore.formatDate(currentDate);
                 goalStore.saveGoals();
             }
+            else if ((startWeightDifference < currentWeightDifference) && (allOpenGoals[i].weightDecision === "Gain")
+                        && ((new Date(allOpenGoals[i].completionDate).getTime() > new Date(currentDate).getTime())))
+            {
+                logger.info("Achieved due to Weight Gain");
+                allOpenGoals[i].status = "Achieved";
+                allOpenGoals[i].goalAchievementDate = assessmentStore.formatDate(currentDate);
+                goalStore.saveGoals();
+            }
+            else if (new Date(allOpenGoals[i].completionDate).getTime() < new Date(currentDate).getTime())
+            {
+                allOpenGoals[i].status = "Missed";
+                goalStore.saveGoals();
+            }
+
         }
 
 

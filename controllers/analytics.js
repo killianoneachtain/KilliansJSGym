@@ -10,8 +10,6 @@ const analytics = {
     calculateBMI(assessment,id)
     {
         const loggedInUser = userStore.getUserById(id);
-        logger.info("here calculating BMI");
-        logger.info(loggedInUser);
 
         const height = loggedInUser.height;
 
@@ -103,22 +101,6 @@ const analytics = {
 
     },
 
-    folderColour(gender)
-    {
-        let colour = "red";
-        if (gender === "male")
-        {
-            colour = "blue";
-
-        }
-        else if (gender === "female")
-        {
-            colour = "pink";
-
-        }
-        return colour;
-    },
-
     idealBodyWeight(assessment)
     {
         const user = userStore.getUserById(assessment.userId);
@@ -147,7 +129,7 @@ const analytics = {
 
         if (differential <= 0.30)
         {
-            logger.info("GREEN");
+
             return "green";
         }
         else

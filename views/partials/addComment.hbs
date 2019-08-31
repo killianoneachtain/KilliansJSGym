@@ -39,12 +39,12 @@
         </table>
         <form class="ui form" action="/trainer/{{id}}/addcomment" method="POST">
             <div class="field">
-                <label><h2><i class="green comment alternate icon"></i></h2></label>
+                <label><h2 data-tooltip="One Comment Per Assessment"><i class="green comment alternate icon"></i></h2></label>
                 <div class="ui input focus">
-                    <textarea rows="4" type="text" placeholder="Add comments..." maxlength="400" name="comment"></textarea>
+                    <textarea rows="4" type="text" placeholder="Add / Amend comment..." maxlength="400" name="comment"></textarea>
                 </div>
             </div>
-            <button class="ui blue submit button">
+            <button class="ui green submit button">
                 <i class="large icons">
                     <i class="comment alternate icon"></i>
                     <i class="corner red add icon"></i>
