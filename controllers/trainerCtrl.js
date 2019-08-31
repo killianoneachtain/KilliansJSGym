@@ -32,7 +32,7 @@ const trainerDashboard = {
             userIconColour: genderColourArray,
             openGoals: openGoals
         };
-        logger.info("Icon Array is : " + genderColourArray);
+
 
         response.render("trainer", viewData);
     },
@@ -198,11 +198,6 @@ const trainerDashboard = {
         assessment.comment = request.body.comment;
         const userId = assessment.userId;
         assessmentStore.saveAssessment();
-        const viewData = {
-            title: "Trainer Dashboard",
-            members: userStore.getAllUsers(),
-        };
-        logger.info("The userId is : " + userId);
 
         response.redirect("/memberAssessments/" + userId);
     },
@@ -215,10 +210,6 @@ const trainerDashboard = {
         assessmentStore.removeUserAssessments(memberID);
         userStore.removeMember(memberID);
 
-        const viewData = {
-            title: "Trainer Dashboard",
-            members: userStore.getAllUsers(),
-        };
         logger.info("about to render", assessmentStore.getUserAssessments(memberID));
         response.redirect("/trainer");
     },

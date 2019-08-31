@@ -232,24 +232,20 @@ const dashboard = {
 
         for (i=0;i<allOpenGoals.length;i++)
         {
-
-            let startWeightDifference = Math.abs( allOpenGoals[i].goalWeight - allOpenGoals[i].creationWeight);
-            let currentWeightDifference = Math.abs(currentWeight - allOpenGoals[i].creationWeight);
-
-            if((currentWeight < allOpenGoals[i].goalWeight) && ((currentDate > allOpenGoals[i].completionDate)))
+            if ((currentWeight > allOpenGoals[i].goalWeight) && (allOpenGoals[i].weightDecision === "Gain"))
             {
                 allOpenGoals[i].status = "Achieved";
                 allOpenGoals[i].goalAchievementDate = assessmentStore.formatDate(currentDate);
                 goalStore.saveGoals();
             }
-            else if ((startWeightDifference < currentWeightDifference) && (allOpenGoals[i].weightDecision === "Gain")
-                        && ((new Date(allOpenGoals[i].completionDate).getTime() > new Date(currentDate).getTime())))
+
+            if ((currentWeight < allOpenGoals[i].goalWeight) && (allOpenGoals[i].weightDecision === "Lose"))
             {
-                logger.info("Achieved due to Weight Gain");
                 allOpenGoals[i].status = "Achieved";
                 allOpenGoals[i].goalAchievementDate = assessmentStore.formatDate(currentDate);
                 goalStore.saveGoals();
             }
+
             else if (new Date(allOpenGoals[i].completionDate).getTime() < new Date(currentDate).getTime())
             {
                 allOpenGoals[i].status = "Missed";

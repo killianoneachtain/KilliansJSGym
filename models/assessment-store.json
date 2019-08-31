@@ -100,9 +100,22 @@
       "upperArm": 56,
       "waist": 56,
       "hips": 56,
-      "comment": "ggreat work",
+      "comment": "Goo",
       "date": "29-Aug-2019 16:44:02",
       "trend": "red"
+    },
+    {
+      "id": "aec650cd-fab0-42f3-84ed-79e089eaaaa1",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "weight": 65,
+      "chest": 56,
+      "thigh": 56,
+      "upperArm": 56,
+      "waist": 56,
+      "hips": 56,
+      "comment": "",
+      "date": "31-Aug-2019 14:58:38",
+      "trend": "olive"
     }
   ]
 }
