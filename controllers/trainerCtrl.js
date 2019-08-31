@@ -211,6 +211,7 @@ const trainerDashboard = {
     {
         const memberID = request.params.id;
         logger.info("Deleting member", memberID);
+        goalStore.removeUserGoals(memberID);
         assessmentStore.removeUserAssessments(memberID);
         userStore.removeMember(memberID);
 
@@ -219,7 +220,7 @@ const trainerDashboard = {
             members: userStore.getAllUsers(),
         };
         logger.info("about to render", assessmentStore.getUserAssessments(memberID));
-        response.render("trainer", viewData);
+        response.redirect("/trainer");
     },
 };
 

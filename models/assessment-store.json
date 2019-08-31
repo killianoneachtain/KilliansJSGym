@@ -14,45 +14,6 @@
       "trend": "blue"
     },
     {
-      "id": "b68a92e7-c393-4ddb-920e-5d64e019d0c0",
-      "userId": "f05a567b-2794-4157-8ea2-e66f0d6f3962",
-      "weight": 112,
-      "chest": 56,
-      "thigh": 56,
-      "upperArm": 56,
-      "waist": 56,
-      "hips": 56,
-      "comment": "",
-      "date": "21-Aug-2019 04:30:28",
-      "trend": "blue"
-    },
-    {
-      "id": "0b71590e-af39-4d8f-8d6f-1dfa3ecb3149",
-      "userId": "f05a567b-2794-4157-8ea2-e66f0d6f3962",
-      "weight": 76.8,
-      "chest": 56,
-      "thigh": 56,
-      "upperArm": 56,
-      "waist": 56,
-      "hips": 56,
-      "comment": "",
-      "date": "21-Aug-2019 17:18:13",
-      "trend": "olive"
-    },
-    {
-      "id": "2c128823-7cf8-480b-bf92-22c7888e0e85",
-      "userId": "f05a567b-2794-4157-8ea2-e66f0d6f3962",
-      "weight": 76.4,
-      "chest": 56,
-      "thigh": 56,
-      "upperArm": 56,
-      "waist": 56,
-      "hips": 56,
-      "comment": "Great Work",
-      "date": "21-Aug-2019 17:18:26",
-      "trend": "olive"
-    },
-    {
       "id": "4cf49846-fd3f-4fa2-a166-5c7ed7caa8a8",
       "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
       "weight": 113.01,

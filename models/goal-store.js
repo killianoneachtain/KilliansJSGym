@@ -96,7 +96,6 @@ const goalStore = {
     removeUserGoals(userId) {
         const goalCollection = goalStore.getUserGoals(userId);
         logger.info("Deleting goals for :" + userId);
-        logger.info(assessmentCollection.length);
 
         let index = 0;
 

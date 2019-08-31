@@ -26,18 +26,6 @@
       "numberOfAssessments": 2
     },
     {
-      "firstName": "Killian",
-      "lastName": "O'Neachtain",
-      "gender": "male",
-      "email": "killianoneachtain@hotmail.com",
-      "password": "mowax",
-      "address": "66 Glenside, Ballycarnane Woods",
-      "height": 182,
-      "startingWeight": 65.25,
-      "id": "f05a567b-2794-4157-8ea2-e66f0d6f3962",
-      "numberOfAssessments": 3
-    },
-    {
       "firstName": "Mick",
       "lastName": "Muscles",
       "gender": "male",
