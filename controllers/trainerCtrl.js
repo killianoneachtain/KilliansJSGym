@@ -18,6 +18,13 @@ const trainerDashboard = {
         const trainer = accounts.getCurrentTrainer(request);
         const users = userStore.getAllUsers();
 
+        let i =0;
+        for (i=0;i<users.length;i++)
+        {
+            goals.checkUserGoals(users[i].id);
+        }
+
+
 
         let genderColourArray = [];
         genderColourArray = trainerDashboard.pinkOrBlue();

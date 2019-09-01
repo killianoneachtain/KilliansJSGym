@@ -9,8 +9,8 @@
       "creationWeight": 86.4,
       "completionDate": "Sat Aug 31 2019 23:59:59 GMT+0100 (Irish Standard Time)",
       "goalWeight": 87,
-      "goalAchievementDate": "",
-      "status": "Open"
+      "goalAchievementDate": "01-Sep-2019 01:57:33",
+      "status": "Achieved"
     },
     {
       "id": "e88f7772-7331-4f4d-9a82-51d993983267",
@@ -103,7 +103,7 @@
       "completionDate": "Sat Aug 31 2019 23:59:59 GMT+0100 (Irish Standard Time)",
       "goalWeight": 28,
       "goalAchievementDate": "",
-      "status": "Open"
+      "status": "Missed"
     },
     {
       "id": "beb29825-c632-4d2e-b774-ccf74262ac57",
@@ -127,7 +127,7 @@
       "completionDate": "Sat Aug 31 2019 23:59:59 GMT+0100 (Irish Standard Time)",
       "goalWeight": 69,
       "goalAchievementDate": "31-Aug-2019 15:51:12",
-      "status": "Open"
+      "status": "Missed"
     },
     {
       "id": "de11ab14-6dfb-4c93-8972-45972b22e1af",
@@ -140,6 +140,50 @@
       "goalWeight": 69,
       "goalAchievementDate": "31-Aug-2019 15:54:59",
       "status": "Achieved"
+    },
+    {
+      "id": "02a0bbd7-2244-46ac-bdfe-f23ec5f5ef63",
+      "userId": "470fc775-5a2c-45a4-aa54-271a3c7dd910",
+      "createdBy": "Lisa Simpson",
+      "creationDate": "Sat Aug 31 2019 16:21:44 GMT+0100 (Irish Standard Time)",
+      "weightDecision": "Gain",
+      "creationWeight": 68,
+      "completionDate": "Sat Aug 31 2019 23:59:59 GMT+0100 (Irish Standard Time)",
+      "goalWeight": 69,
+      "status": "Missed"
+    },
+    {
+      "id": "b22f2b77-9988-4ca9-9b03-a46306092caa",
+      "userId": "d656b57c-f229-4c42-90ec-aefb817085a2",
+      "createdBy": "Lisa Simpson",
+      "creationDate": "Sat Aug 31 2019 16:22:01 GMT+0100 (Irish Standard Time)",
+      "weightDecision": "Gain",
+      "creationWeight": 58.26,
+      "completionDate": "Sat Aug 31 2019 23:59:59 GMT+0100 (Irish Standard Time)",
+      "goalWeight": 60,
+      "status": "Missed"
+    },
+    {
+      "id": "1153f635-fa42-47c0-86d9-9012e08a0f93",
+      "userId": "279e825d-600c-4cc5-b899-b32ee130f9a9",
+      "createdBy": "Lisa Simpson",
+      "creationDate": "Sat Aug 31 2019 16:22:47 GMT+0100 (Irish Standard Time)",
+      "weightDecision": "Lose",
+      "creationWeight": 110,
+      "completionDate": "Sat Aug 31 2019 23:59:59 GMT+0100 (Irish Standard Time)",
+      "goalWeight": 106,
+      "status": "Missed"
+    },
+    {
+      "id": "b22f2b77-9988-4ca9-9b03-a46306092caa",
+      "userId": "d656b57c-f229-4c42-90ec-aefb817085a2",
+      "createdBy": "Lisa Simpson",
+      "creationDate": "Sat Aug 31 2019 16:22:01 GMT+0100 (Irish Standard Time)",
+      "weightDecision": "Gain",
+      "creationWeight": 58.26,
+      "completionDate": "Sat Aug 31 2019 23:59:59 GMT+0100 (Irish Standard Time)",
+      "goalWeight": 60,
+      "status": "Missed"
     }
   ]
 }
