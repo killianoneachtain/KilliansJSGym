@@ -83,7 +83,7 @@ const assessmentStore = {
 
   sortAssessmentsByDate(assessments)
   {
-    logger.info("sorting dates here");
+    logger.info("sorting Assessment dates here");
     return assessments.sort(assessmentStore.compareValues('date','desc'));
   },
 

@@ -10,7 +10,7 @@
       "height": 176,
       "startingWeight": 98.26,
       "id": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "numberOfAssessments": 6,
+      "numberOfAssessments": 7,
       "goals": null
     },
     {
@@ -35,6 +35,30 @@
       "height": 179,
       "startingWeight": 84.26,
       "id": "c220ef48-10e8-4b0e-b0a7-33caab7e05bf",
+      "numberOfAssessments": 0
+    },
+    {
+      "firstName": "John",
+      "lastName": "Muscles",
+      "gender": "male",
+      "email": "john@me.com",
+      "password": "secret",
+      "address": "66 Glenside, Ballycarnane Woods",
+      "height": 175,
+      "startingWeight": 68,
+      "id": "470fc775-5a2c-45a4-aa54-271a3c7dd910",
+      "numberOfAssessments": 0
+    },
+    {
+      "firstName": "Mary",
+      "lastName": "Muscles",
+      "gender": "female",
+      "email": "mary@me.com",
+      "password": "secret",
+      "address": "66 Glenside, Ballycarnane Woods",
+      "height": 173,
+      "startingWeight": 58.26,
+      "id": "d656b57c-f229-4c42-90ec-aefb817085a2",
       "numberOfAssessments": 0
     }
   ]

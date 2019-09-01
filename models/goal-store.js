@@ -29,16 +29,20 @@ const goalStore = {
     getOpenGoals(userId)
     {
         const allGoals = goalStore.getUserGoals(userId);
-        const sortedGoals = goalStore.sortGoalsByDate(allGoals);
+
+
         const openGoals = [];
         let i = 0;
-        for (i=0;i<sortedGoals.length;i++)
+        for (i=0;i<allGoals.length;i++)
         {
-            if (sortedGoals[i].status === "Open")
+            if (allGoals[i].status === "Open")
             {
-               openGoals.push(sortedGoals[i]);
+               openGoals.push(allGoals[i]);
             }
         }
+
+        const sortedGoals = goalStore.sortGoalsByDate(openGoals);
+        logger.info("Sorted goal dates are:", openGoals);
         return openGoals;
     },
 
@@ -125,27 +129,47 @@ const goalStore = {
     sortGoalsByDate(goals)
     {
         return goals.sort(assessmentStore.compareValues('completionDate','desc'));
-    },
-
-    monthNameToNumber(month)
-    {
-        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"  ];
-
-        let i = 0;
-        let monthNumber = 0;
-
-        for(i=0;i<monthNames.length;i++)
-        {
-            if (month === monthNames[i])
-            {
-                monthNumber = i;
-            }
-        }
-
-
-        return monthNumber;
     }
+    /*
+    formatDate(date)
+  {
+    let day = date.slice(8,10);
+    let month = date.slice(4,7);
+    let year = date.slice(11,15);
+    let time = date.slice(16,24);
+    return day + "-" + month + "-" + year + " " + time;
+  },
+
+  sortAssessmentsByDate(assessments)
+  {
+    logger.info("sorting Assessment dates here");
+    return assessments.sort(assessmentStore.compareValues('date','desc'));
+  },
+
+  compareValues(key,order='asc')
+  //https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
+  {
+    return function (a, b) {
+      if (!a.hasOwnProperty(key) ||
+          !b.hasOwnProperty(key)) {
+        return 0;
+      }
+
+      const varA = (typeof a[key] === 'string') ?
+          a[key].toUpperCase() : a[key];
+      const varB = (typeof b[key] === 'string') ?
+          b[key].toUpperCase() : b[key];
+
+      let comparison = 0;
+      if (varA > varB) {
+        comparison = 1;
+      } else if (varA < varB) {
+        comparison = -1;
+      }
+      return ( (order === 'desc') ?(comparison * -1) : comparison );
+    };
+  }
+     */
 
 };
 
