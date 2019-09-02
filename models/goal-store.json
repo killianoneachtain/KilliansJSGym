@@ -46,78 +46,6 @@
       "goalAchievementDate": "31-Aug-2019 14:58:04"
     },
     {
-      "id": "beb29825-c632-4d2e-b774-ccf74262ac57",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "Homer Jay Simpson",
-      "creationDate": "Sat Aug 31 2019 14:39:33 GMT+0100 (Irish Standard Time)",
-      "weightDecision": "Lose",
-      "creationWeight": 100.36,
-      "completionDate": "Fri Sep 13 2019 23:59:59 GMT+0100 (Irish Standard Time)",
-      "goalWeight": 68,
-      "goalAchievementDate": "31-Aug-2019 14:58:38",
-      "status": "Achieved"
-    },
-    {
-      "id": "beb29825-c632-4d2e-b774-ccf74262ac57",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "Homer Jay Simpson",
-      "creationDate": "Sat Aug 23 2019 14:39:33 GMT+0100 (Irish Standard Time)",
-      "weightDecision": "Lose",
-      "creationWeight": 100.36,
-      "completionDate": "Fri Aug 24 2019 23:59:59 GMT+0100 (Irish Standard Time)",
-      "goalWeight": 58,
-      "goalAchievementDate": "",
-      "status": "Missed"
-    },
-    {
-      "id": "beb29825-c632-4d2e-b774-ccf74262ac57",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "Homer Jay Simpson",
-      "creationDate": "Sat Aug 31 2019 14:39:33 GMT+0100 (Irish Standard Time)",
-      "weightDecision": "Lose",
-      "creationWeight": 100.36,
-      "completionDate": "Fri Sep 13 2019 23:59:59 GMT+0100 (Irish Standard Time)",
-      "goalWeight": 48,
-      "goalAchievementDate": "",
-      "status": "Open"
-    },
-    {
-      "id": "beb29825-c632-4d2e-b774-ccf74262ac57",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "Homer Jay Simpson",
-      "creationDate": "Sat Aug 31 2019 14:39:33 GMT+0100 (Irish Standard Time)",
-      "weightDecision": "Lose",
-      "creationWeight": 100.36,
-      "completionDate": "Fri Sep 13 2019 23:59:59 GMT+0100 (Irish Standard Time)",
-      "goalWeight": 38,
-      "goalAchievementDate": "",
-      "status": "Open"
-    },
-    {
-      "id": "beb29825-c632-4d2e-b774-ccf74262ac57",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "Homer Jay Simpson",
-      "creationDate": "Sat Aug 31 2019 14:39:33 GMT+0100 (Irish Standard Time)",
-      "weightDecision": "Lose",
-      "creationWeight": 100.36,
-      "completionDate": "Sat Aug 31 2019 23:59:59 GMT+0100 (Irish Standard Time)",
-      "goalWeight": 28,
-      "goalAchievementDate": "",
-      "status": "Missed"
-    },
-    {
-      "id": "beb29825-c632-4d2e-b774-ccf74262ac57",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "createdBy": "Homer Jay Simpson",
-      "creationDate": "Sat Aug 31 2019 14:39:33 GMT+0100 (Irish Standard Time)",
-      "weightDecision": "Lose",
-      "creationWeight": 100.36,
-      "completionDate": "Sun Sep 01 2019 23:59:59 GMT+0100 (Irish Standard Time)",
-      "goalWeight": 18,
-      "goalAchievementDate": "",
-      "status": "Open"
-    },
-    {
       "id": "3075f9fe-9262-4709-837e-649f8f164868",
       "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
       "createdBy": "Homer Jay Simpson",
@@ -184,6 +112,82 @@
       "completionDate": "Sat Aug 31 2019 23:59:59 GMT+0100 (Irish Standard Time)",
       "goalWeight": 60,
       "status": "Missed"
+    },
+    {
+      "id": "1b786448-7858-492b-89b1-8169f6cda7fd",
+      "userId": "d656b57c-f229-4c42-90ec-aefb817085a2",
+      "createdBy": "Mary Muscles",
+      "creationDate": "Sun Sep 01 2019 20:49:07 GMT+0100 (Irish Standard Time)",
+      "weightDecision": "Gain",
+      "creationWeight": 58.26,
+      "completionDate": "Sun Sep 08 2019 23:59:59 GMT+0100 (Irish Standard Time)",
+      "goalWeight": 59,
+      "goalAchievementDate": "",
+      "status": "Open"
+    },
+    {
+      "id": "6ae759f2-9469-4776-a1c1-c98178658d72",
+      "userId": "d656b57c-f229-4c42-90ec-aefb817085a2",
+      "createdBy": "Mary Muscles",
+      "creationDate": "Sun Sep 01 2019 20:49:18 GMT+0100 (Irish Standard Time)",
+      "weightDecision": "Gain",
+      "creationWeight": 58.26,
+      "completionDate": "Sun Sep 15 2019 23:59:59 GMT+0100 (Irish Standard Time)",
+      "goalWeight": 62,
+      "goalAchievementDate": "",
+      "weightAtFinish": 0,
+      "status": "Open"
+    },
+    {
+      "id": "34be3772-3263-4ba1-80c3-4b63de134820",
+      "userId": "d656b57c-f229-4c42-90ec-aefb817085a2",
+      "createdBy": "Mary Muscles",
+      "creationDate": "Sun Sep 01 2019 20:49:37 GMT+0100 (Irish Standard Time)",
+      "weightDecision": "Gain",
+      "creationWeight": 58.26,
+      "completionDate": "Sun Sep 22 2019 23:59:59 GMT+0100 (Irish Standard Time)",
+      "goalWeight": 64.15,
+      "goalAchievementDate": "",
+      "status": "Open"
+    },
+    {
+      "id": "4198ebe0-9cfc-4840-b1d8-4c8bc771939b",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Homer Jay Simpson",
+      "creationDate": "Sun Sep 01 2019 20:55:26 GMT+0100 (Irish Standard Time)",
+      "weightDecision": "Gain",
+      "creationWeight": 65,
+      "completionDate": "Thu Sep 05 2019 23:59:59 GMT+0100 (Irish Standard Time)",
+      "goalWeight": 68.5,
+      "goalAchievementDate": "01-Sep-2019 21:25:47",
+      "status": "Achieved",
+      "weightAtFinish": 90.26
+    },
+    {
+      "id": "8ecf95b7-a83e-4cd2-b994-55a22e11f5e8",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Homer Jay Simpson",
+      "creationDate": "Sun Sep 01 2019 21:02:57 GMT+0100 (Irish Standard Time)",
+      "weightDecision": "Lose",
+      "creationWeight": 65,
+      "completionDate": "Fri Sep 27 2019 23:59:59 GMT+0100 (Irish Standard Time)",
+      "goalWeight": 62,
+      "goalAchievementDate": "01-Sep-2019 21:27:41",
+      "status": "Achieved",
+      "weightAtFinish": 61
+    },
+    {
+      "id": "cc5c44f4-5349-463e-9912-cc1d2708098e",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "createdBy": "Homer Jay Simpson",
+      "creationDate": "Sun Sep 01 2019 21:24:07 GMT+0100 (Irish Standard Time)",
+      "weightDecision": "Gain",
+      "creationWeight": 65,
+      "completionDate": "Mon Sep 02 2019 23:59:59 GMT+0100 (Irish Standard Time)",
+      "goalWeight": 66,
+      "goalAchievementDate": "01-Sep-2019 21:25:47",
+      "weightAtFinish": 90.26,
+      "status": "Achieved"
     }
   ]
 }

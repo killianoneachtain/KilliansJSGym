@@ -14,19 +14,6 @@
       "trend": "blue"
     },
     {
-      "id": "4cf49846-fd3f-4fa2-a166-5c7ed7caa8a8",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "weight": 113.01,
-      "chest": 56,
-      "thigh": 56,
-      "upperArm": 56,
-      "waist": 56,
-      "hips": 56,
-      "comment": "here we go to the beat and the rhyme of the beats i used to rock tapes",
-      "date": "21-Aug-2019 20:11:25",
-      "trend": "blue"
-    },
-    {
       "id": "912b13d6-8ca6-4a2b-9a9f-04acfcf96719",
       "userId": "279e825d-600c-4cc5-b899-b32ee130f9a9",
       "weight": 110,
@@ -40,72 +27,33 @@
       "trend": "olive"
     },
     {
-      "id": "7916f851-8464-4dee-bf1a-6934c5bd55e6",
+      "id": "dc336acd-d907-4fa3-9247-b034982c0d9f",
       "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "weight": 85.22,
-      "chest": 64,
-      "thigh": 56,
-      "upperArm": 64,
-      "waist": 46,
-      "hips": 46,
-      "comment": "",
-      "date": "28-Aug-2019 16:02:58",
-      "trend": "olive"
-    },
-    {
-      "id": "9196ca40-52d6-4b86-9294-cab817af7220",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "weight": 83.25,
-      "chest": 64.2,
-      "thigh": 30.09,
-      "upperArm": 26.26,
-      "waist": 64.26,
-      "hips": 61.25,
-      "comment": "",
-      "date": "28-Aug-2019 23:23:22",
-      "trend": "olive"
-    },
-    {
-      "id": "609b71c3-aad7-4651-abc0-8a1aa2f1cd0a",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "weight": 65.26,
+      "weight": 66.01,
       "chest": 56,
       "thigh": 56,
       "upperArm": 56,
       "waist": 56,
       "hips": 56,
       "comment": "",
-      "date": "29-Aug-2019 10:15:12",
-      "trend": "olive"
+      "date": "01-Sep-2019 21:24:19",
+      "trend": "blue"
     },
     {
-      "id": "21074142-bc4e-4564-b7f5-abfe515187a6",
+      "id": "9f76ceb6-c5c0-418a-aae0-0a7398f6c33c",
       "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "weight": 90.26,
+      "weight": 66.01,
       "chest": 56,
       "thigh": 56,
       "upperArm": 56,
       "waist": 56,
       "hips": 56,
       "comment": "",
-      "date": "29-Aug-2019 16:43:06",
-      "trend": "red"
+      "date": "01-Sep-2019 21:24:56",
+      "trend": "olive"
     },
     {
-      "id": "ddd5f25b-7ef8-46a5-b30b-e45aab0356bc",
-      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
-      "weight": 100.36,
-      "chest": 56,
-      "thigh": 56,
-      "upperArm": 56,
-      "waist": 56,
-      "hips": 56,
-      "comment": "Goo",
-      "date": "29-Aug-2019 16:44:02",
-      "trend": "red"
-    },
-    {
-      "id": "aec650cd-fab0-42f3-84ed-79e089eaaaa1",
+      "id": "6ad4a8eb-b514-47c8-9738-3112614c8781",
       "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
       "weight": 65,
       "chest": 56,
@@ -114,7 +62,20 @@
       "waist": 56,
       "hips": 56,
       "comment": "",
-      "date": "31-Aug-2019 14:58:38",
+      "date": "01-Sep-2019 21:27:21",
+      "trend": "olive"
+    },
+    {
+      "id": "afcb1800-51cc-4b2b-85df-d065757de4ec",
+      "userId": "e5fa912c-2c1f-4948-ac65-3d595096f3a8",
+      "weight": 61,
+      "chest": 65,
+      "thigh": 56,
+      "upperArm": 56,
+      "waist": 56,
+      "hips": 56,
+      "comment": "",
+      "date": "01-Sep-2019 21:27:41",
       "trend": "olive"
     }
   ]

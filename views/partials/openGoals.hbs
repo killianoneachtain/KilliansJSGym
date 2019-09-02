@@ -5,23 +5,25 @@
     <div class="item">
         <table class="ui orange striped celled table">
             <thead>
+            <tr style="font-size: 110%"><h3>{{user.firstName}}, Your Current Weight is: {{currentWeight}} Kg </h3></tr>
             <tr>
-                <th>Added By</th>
-                <th>Goal Date</th>
-                <th>Goal Weight</th>
-                <th>Status</th>
-            </tr>
-            </thead>
-            <tbody>
-            {{#each openGoals}}
-                <tr>
-                    <td>{{createdBy}}</td>
-                    <td>{{completionDate}}</td>
-                    <td>{{goalWeight}}</td>
-                    <td>{{status}}</td>
-                </tr>
-            {{/each}}
-            </tbody>
+        <th>Added By :</th>
+        <th>Lose / Gain Weight</th>
+        <th>Goal Start Weight: Kg</th>
+        <th>Goal Weight : Kg</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {{#each openGoals}}
+        <tr>
+        <td>{{createdBy}}</td>
+        <td>{{weightDecision}}</td>
+        <td>{{creationWeight}}</td>
+        <td>{{goalWeight}}</td>
+
+    </tr>
+    {{/each}}
         </table>
     </div>
 </div>

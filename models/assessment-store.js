@@ -41,13 +41,11 @@ const assessmentStore = {
   {
     const assessment = this.getAssessment(id);
     const user = userStore.getUserById(assessment.userId);
-    const assessmentCollection = assessmentStore.getUserAssessments(user);
-    const lastAssessment = user.numberOfAssessments-1;
-    logger.info("deleting assessment", assessmentCollection[lastAssessment]);
+
     user.numberOfAssessments -= 1;
     userStore.saveUser(user);
+
     this.store.remove(this.collection, assessment);
-    //user.BMI = ((assessmentCollection[(user.numberOfAssessments) -1].weight)/ Math.pow((user.height), 2.0) * 10000).toFixed(2);
     this.store.save();
   },
 

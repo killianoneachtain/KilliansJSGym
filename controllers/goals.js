@@ -144,6 +144,7 @@ const dashboard = {
                 completionDate: goalExpiryDate,
                 goalWeight: Number(request.body.goalWeight),
                 goalAchievementDate: "",
+                weightAtFinish: 0,
                 status: "Open"
             };
 
@@ -225,7 +226,6 @@ const dashboard = {
         const now = Date(Date.now());
         const currentDate = now.toString();
 
-
         const currentWeight = assessmentStore.returnLatestWeight(userId);
 
         let i = 0;
@@ -234,6 +234,7 @@ const dashboard = {
         {
             if ((currentWeight > allOpenGoals[i].goalWeight) && (allOpenGoals[i].weightDecision === "Gain"))
             {
+                allOpenGoals[i].weightAtFinish = currentWeight;
                 allOpenGoals[i].status = "Achieved";
                 allOpenGoals[i].goalAchievementDate = assessmentStore.formatDate(currentDate);
                 goalStore.saveGoals();
@@ -241,6 +242,7 @@ const dashboard = {
 
             if ((currentWeight < allOpenGoals[i].goalWeight) && (allOpenGoals[i].weightDecision === "Lose"))
             {
+                allOpenGoals[i].weightAtFinish = currentWeight;
                 allOpenGoals[i].status = "Achieved";
                 allOpenGoals[i].goalAchievementDate = assessmentStore.formatDate(currentDate);
                 goalStore.saveGoals();
@@ -248,6 +250,7 @@ const dashboard = {
 
             else if (new Date(allOpenGoals[i].completionDate).getTime() < new Date(currentDate).getTime())
             {
+                allOpenGoals[i].weightAtFinish = currentWeight;
                 allOpenGoals[i].status = "Missed";
                 goalStore.saveGoals();
             }

@@ -119,6 +119,7 @@ const trainerDashboard = {
                 creationWeight: Number(assessmentStore.returnLatestWeight(request.params.id)),
                 completionDate: goalExpiryDate,
                 goalWeight: Number(request.body.goalWeight),
+                weightAtFinish: 0,
                 status: "Open"
             };
 

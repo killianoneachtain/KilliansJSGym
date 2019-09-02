@@ -3,8 +3,8 @@
 <table class="ui orange center aligned celled table">
     <thead>
     <tr>
-        <th>Added On :</th>
         <th>Added By :</th>
+        <th>Lose / Gain Weight</th>
         <th>Goal Start Weight: Kg</th>
         <th>Goal Weight : Kg</th>
         <th>Goal Date :</th>
@@ -14,8 +14,8 @@
     <tbody>
     {{#each openGoals}}
     <tr>
-        <td>{{creationDate}}</td>
         <td>{{createdBy}}</td>
+        <td>{{weightDecision}}</td>
         <td>{{creationWeight}}</td>
         <td>{{goalWeight}}</td>
         <td>{{completionDate}}</td>
@@ -32,7 +32,6 @@
     <table class="ui green celled table">
         <thead>
         <tr>
-            <th>Creation Date</th>
             <th>Created By</th>
             <th>Weight to Achieve</th>
             <th>Goal Achievement Date</th>
@@ -41,7 +40,6 @@
         <tbody>
         {{#each achievedGoals}}
             <tr class="positive">
-                <td>{{creationDate}}</td>
                 <td>{{createdBy}}</td>
                 <td>{{goalWeight}}</td>
                 <td>{{goalAchievementDate}}</td>
@@ -56,7 +54,6 @@
     <table class="ui red celled table">
         <thead>
         <tr>
-            <th>Creation Date</th>
             <th>Created By</th>
             <th>Weight to Achieve</th>
             <th>Completion Date</th>
@@ -65,7 +62,6 @@
         <tbody>
         {{#each missedGoals}}
             <tr class="negative">
-                <td>{{creationDate}}</td>
                 <td>{{createdBy}}</td>
                 <td>{{goalWeight}}</td>
                 <td>{{completionDate}}</td>

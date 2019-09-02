@@ -2,13 +2,9 @@
 
 const _ = require("lodash");
 const JsonStore = require("./json-store");
-const userStore = require("../models/user-store");
 const assessmentStore = require("../models/assessment-store");
-const trainerStore = require("../models/trainer-store");
 const logger = require("../utils/logger");
-const analytics = require("../controllers/analytics");
-const dashboard = require("../controllers/dashboard");
-const uuid = require("uuid");
+
 
 
 
@@ -93,6 +89,8 @@ const goalStore = {
     removeGoal(id)
     {
         const goal = this.getGoal(id);
+        logger.info("The assessment is: " + goal.id);
+
         this.store.remove(this.collection, goal);
         this.store.save();
     },
@@ -117,59 +115,10 @@ const goalStore = {
         this.store.save();
     },
 
-    formatDate(date)
-    {
-        let day = date.slice(8,10);
-        let month = date.slice(4,7);
-        let year = date.slice(11,15);
-        let time = date.slice(16,24);
-        return day + "-" + month + "-" + year + " " + time;
-    },
-
     sortGoalsByDate(goals)
     {
         return goals.sort(assessmentStore.compareValues('completionDate','desc'));
     }
-    /*
-    formatDate(date)
-  {
-    let day = date.slice(8,10);
-    let month = date.slice(4,7);
-    let year = date.slice(11,15);
-    let time = date.slice(16,24);
-    return day + "-" + month + "-" + year + " " + time;
-  },
-
-  sortAssessmentsByDate(assessments)
-  {
-    logger.info("sorting Assessment dates here");
-    return assessments.sort(assessmentStore.compareValues('date','desc'));
-  },
-
-  compareValues(key,order='asc')
-  //https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
-  {
-    return function (a, b) {
-      if (!a.hasOwnProperty(key) ||
-          !b.hasOwnProperty(key)) {
-        return 0;
-      }
-
-      const varA = (typeof a[key] === 'string') ?
-          a[key].toUpperCase() : a[key];
-      const varB = (typeof b[key] === 'string') ?
-          b[key].toUpperCase() : b[key];
-
-      let comparison = 0;
-      if (varA > varB) {
-        comparison = 1;
-      } else if (varA < varB) {
-        comparison = -1;
-      }
-      return ( (order === 'desc') ?(comparison * -1) : comparison );
-    };
-  }
-     */
 
 };
 
