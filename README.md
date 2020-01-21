@@ -11,4 +11,4 @@ Heroku App: https://killiansjavascriptgym.herokuapp.com/
 
 **See [Assignment Specifications](assignment.pdf)**
 
-**This assignment is built on from a _[Previous Assignment](/killianoneachtain/killiansgym/assignment-2.pdf)_**
+**This assignment is built on from a _[Previous Assignment](https://www.github.com/killianoneachtain/killiansgym/assignment-2.pdf)_**
