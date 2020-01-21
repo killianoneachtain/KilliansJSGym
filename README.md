@@ -10,3 +10,5 @@ WIT ID : 20023634
 Email : 20023634@student.wit.ie
 
 Heroku App: https://killiansjavascriptgym.herokuapp.com/
+
+See [Assignment Specifications](assignment.pdf).
