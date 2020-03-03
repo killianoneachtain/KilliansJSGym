@@ -1,9 +1,10 @@
 ## Welcome to the Killian's Gym
 
+Create a profile for your Body Assessment needs.
 
-Version 2.7 Of Killian's Gym Application.
+Login to track your body measurements, and check your Body Mass Index(BMI) and you Ideal Weight Indicator.
 
-Built by : Killian O'Neachtain
+
 
 Email : 20023634@student.wit.ie
 
