@@ -4,6 +4,7 @@ Create a profile for your Body Assessment needs.
 
 Login to track your body measurements, and check your Body Mass Index(BMI) and you Ideal Weight Indicator.
 
+Users or Trainers get set Goals, whether a loss or gain of weight, to be achieved by a required date. The amount of goals that are currently open, achieved and missed, are stored and graphically displayed.
 
 
 Email : 20023634@student.wit.ie
